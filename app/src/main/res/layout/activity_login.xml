@@ -70,6 +70,7 @@
         app:boxCornerRadiusTopStart="@dimen/border_radius_fields"
         app:boxCornerRadiusBottomEnd="@dimen/border_radius_fields"
         app:boxCornerRadiusTopEnd="@dimen/border_radius_fields"
+        app:boxStrokeColor="#4D83C8"
         app:endIconTint="#4D83C8"
         app:endIconMode="clear_text"
         app:helperTextTextColor="@color/white"
