@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Banco-jototo</string>
     <string name="login_main_text">Introduce tu DNI y contraseña</string>
+    <string name="text_btn_login">Continuar</string>
+    <string name="text_btn_exit">Salir</string>
 </resources>
