@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#0C1826"
     tools:context=".LoginActivity">
 
     <ImageView
@@ -21,6 +22,7 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:text="@string/login_main_text"
+        android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/img_identity" />
 
@@ -45,8 +47,17 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        app:boxCornerRadiusBottomStart="18dp"
         android:hint="NIF/NIE"
+        android:textColorHint="#4D83C8"
+        app:hintTextColor="#4D83C8"
+        app:boxBackgroundColor="#1B2F4A"
+        app:boxCornerRadiusBottomStart="@dimen/border_radius_fields"
+        app:boxCornerRadiusTopStart="@dimen/border_radius_fields"
+        app:boxCornerRadiusBottomEnd="@dimen/border_radius_fields"
+        app:boxCornerRadiusTopEnd="@dimen/border_radius_fields"
+        app:endIconTint="#4D83C8"
+        app:endIconMode="clear_text"
+        app:helperTextTextColor="@color/white"
         app:helperText="Obligatorio"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -54,6 +65,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/id_edit_text"
+            android:textColor="#4D83C8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@id/id_field" />
@@ -66,10 +78,19 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        app:boxCornerRadiusBottomStart="18dp"
         android:hint="Contraseña"
-        app:helperText="Obligatorio"
+        app:hintTextColor="#4D83C8"
+        android:textColorHint="#4D83C8"
+        app:boxBackgroundColor="#1B2F4A"
+        app:boxCornerRadiusBottomStart="@dimen/border_radius_fields"
+        app:boxCornerRadiusTopStart="@dimen/border_radius_fields"
+        app:boxCornerRadiusBottomEnd="@dimen/border_radius_fields"
+        app:boxCornerRadiusTopEnd="@dimen/border_radius_fields"
+        app:boxStrokeColor="#4D83C8"
+        app:endIconTint="#4D83C8"
         app:endIconMode="password_toggle"
+        app:helperTextTextColor="@color/white"
+        app:helperText="Obligatorio"
         app:layout_constraintEnd_toEndOf="@id/id_field"
         app:layout_constraintStart_toStartOf="@id/id_field"
         app:layout_constraintTop_toBottomOf="@id/id_field">
@@ -78,6 +99,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
+            android:textColor="#4D83C8"
             app:layout_constraintTop_toBottomOf="@id/password_field" />
     </com.google.android.material.textfield.TextInputLayout>
 
