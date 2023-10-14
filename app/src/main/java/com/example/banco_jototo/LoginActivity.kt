@@ -48,7 +48,7 @@ class LoginActivity : AppCompatActivity() {
                 }else{
                     binding.passwordField.error = null
                 }
-                    //binding.passwordField.error = null
+
             }
         })
 
@@ -60,41 +60,15 @@ class LoginActivity : AppCompatActivity() {
             var emptyfields = false
             var validFields = false
 
-
-
-            /*if (dni.isEmpty() && pass.isEmpty()){
-                binding.idField.error = getString(R.string.error_empty_field)
-                binding.idField.error = getString(R.string.error_empty_field)
-                return@setOnClickListener
-            }*/
-
             if (dni.isEmpty()){
                 binding.idField.error = getString(R.string.error_empty_field)
                 emptyfields = true
-                //return@setOnClickListener
-
-                //binding.idField.error = getString(R.string.required)
-                //binding.idField.error = null
-                //Snackbar.make(it, "Debes completar ambos campos", Snackbar.LENGTH_LONG).show()
-
-                /*binding.idField.setHelperTextColor(ColorStateList.valueOf(Color.RED))
-                binding.idField.setBoxStrokeColorStateList(ColorStateList.valueOf(Color.RED))
-                binding.idField.hintTextColor = ColorStateList.valueOf(Color.RED)*/
-
             }
-
-           /* if (!validID(binding.idEditText.text.toString()) && dni.isNotEmpty()){
-                binding.idField.error = getString(R.string.error_id_field)
-            }*/
 
             if (pass.isEmpty()){
                 binding.passwordField.error = getString(R.string.error_empty_field)
                 emptyfields = true
-                //return@setOnClickListener
 
-                /*binding.passwordField.setHelperTextColor(ColorStateList.valueOf(Color.RED))
-                binding.passwordField.setBoxStrokeColorStateList(ColorStateList.valueOf(Color.RED))
-                binding.passwordField.hintTextColor = ColorStateList.valueOf(Color.RED)*/
             }
 
             if (emptyfields){
@@ -112,11 +86,6 @@ class LoginActivity : AppCompatActivity() {
                 binding.idField.error = getString(R.string.error_id_field)
                 return@setOnClickListener
 
-                /*binding.idField.helperText = "DNI Invalido"
-                binding.idField.setHelperTextColor(ColorStateList.valueOf(Color.RED))
-                binding.idField.setBoxStrokeColorStateList(ColorStateList.valueOf(Color.RED))
-                binding.idField.hintTextColor = ColorStateList.valueOf(Color.RED)*/
-
             }
 
         }
@@ -127,7 +96,6 @@ class LoginActivity : AppCompatActivity() {
             finish()
         }
 
-        //setContentView(R.layout.activity_login)
     }
 
     fun validID(dni: String): Boolean{
