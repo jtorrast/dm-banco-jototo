@@ -23,8 +23,8 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding = ActivityLoginBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        /*binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)*/
 
         binding.idEditText.addTextChangedListener(object : TextWatcher{
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
@@ -59,7 +59,7 @@ class LoginActivity : AppCompatActivity() {
 
         binding.btnLogin.setOnClickListener {
 
-            val dni = binding.idEditText.text.toString().trim()
+            val dni = binding.idEditText.text.toString().trim().uppercase()
             val pass = binding.passwordEditField.text.toString().trim()
             var emptyfields = false
             var validFields = false
@@ -85,6 +85,8 @@ class LoginActivity : AppCompatActivity() {
 
             if (validFields){
                 val intent = Intent(this, MainActivity::class.java)
+
+                intent.putExtra("dni", dni)
                 startActivity(intent)
             }else{
                 binding.idField.error = getString(R.string.error_id_field)
