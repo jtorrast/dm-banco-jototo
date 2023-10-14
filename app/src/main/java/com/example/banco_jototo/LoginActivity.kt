@@ -48,6 +48,7 @@ class LoginActivity : AppCompatActivity() {
                 }else{
                     binding.passwordField.error = null
                 }
+                    //binding.passwordField.error = null
             }
         })
 
@@ -57,6 +58,7 @@ class LoginActivity : AppCompatActivity() {
             val dni = binding.idEditText.text.toString().trim()
             val pass = binding.passwordEditField.text.toString().trim()
             var emptyfields = false
+            var validFields = false
 
 
 
@@ -98,9 +100,12 @@ class LoginActivity : AppCompatActivity() {
             if (emptyfields){
                 return@setOnClickListener
             }
+            if (validID(binding.idEditText.text.toString()) && pass.length >= 5){
+                validFields = true;
+            }
 
 
-            if (validID(binding.idEditText.text.toString())){
+            if (validFields){
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
             }else{
