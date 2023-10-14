@@ -75,6 +75,7 @@
         app:endIconMode="clear_text"
         app:helperTextTextColor="@color/white"
         app:helperText="Obligatorio"
+        app:errorEnabled="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/guideline2">
@@ -106,12 +107,14 @@
         app:endIconTint="#4D83C8"
         app:endIconMode="password_toggle"
         app:helperTextTextColor="@color/white"
+
         app:helperText="Obligatorio"
         app:layout_constraintEnd_toEndOf="@id/id_field"
         app:layout_constraintStart_toStartOf="@id/id_field"
         app:layout_constraintTop_toBottomOf="@id/id_field">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password_edit_field"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
@@ -149,7 +152,6 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnExit"
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
