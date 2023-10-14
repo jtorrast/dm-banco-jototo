@@ -23,9 +23,6 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        /*binding = ActivityLoginBinding.inflate(layoutInflater)
-        setContentView(binding.root)*/
-
         binding.idEditText.addTextChangedListener(object : TextWatcher{
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
             }
@@ -75,31 +72,29 @@ class LoginActivity : AppCompatActivity() {
 
             }
 
-            if (emptyfields){
-                return@setOnClickListener
-            }
-            if (validID(binding.idEditText.text.toString()) && pass.length >= 5){
+            if (validID(dni)){
                 validFields = true;
             }
 
+            if (emptyfields && validFields == false){
+                return@setOnClickListener
+            }
 
-            if (validFields){
-                val intent = Intent(this, MainActivity::class.java)
-
-                intent.putExtra("dni", dni)
-                startActivity(intent)
+            if (validID(dni)){
+                if (pass.length >= 5){
+                    val intent = Intent(this, MainActivity::class.java)
+                    intent.putExtra("dni", dni)
+                    startActivity(intent)
+                }else{
+                    binding.passwordField.error = getString(R.string.error_password_length)
+                }
             }else{
                 binding.idField.error = getString(R.string.error_id_field)
                 return@setOnClickListener
-
             }
 
         }
 
-        //boton salir aplicación
-        binding.btnExit.setOnClickListener {
-            finish()
-        }
 
         //boton salir aplicación
         binding.btnExit.setOnClickListener {
@@ -126,7 +121,6 @@ class LoginActivity : AppCompatActivity() {
         }
 
         return false
-
 
     }
 }
