@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.View
 import android.widget.EditText
 import com.example.banco_jototo.databinding.ActivityLoginBinding
 import com.example.banco_jototo.databinding.ActivityMainBinding
@@ -22,7 +23,7 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.idEditText.addTextChangedListener(object : TextWatcher{
+       /* binding.idEditText.addTextChangedListener(object : TextWatcher{
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
             }
 
@@ -48,53 +49,42 @@ class LoginActivity : AppCompatActivity() {
                 }else{
                     binding.passwordField.error = null
                 }
-                    //binding.passwordField.error = null
+
             }
-        })
+        })*/
 
 
-        binding.btnLogin.setOnClickListener {
+        binding.idEditText.onFocusChangeListener = View.OnFocusChangeListener { v, hasFocus ->
+            val dni = binding.idEditText.text.toString().trim()
+
+            if (dni.isEmpty()){
+                binding.idField.error = getString(R.string.error_empty_field)
+            }else{
+                binding.btnLogin.setOnClickListener {
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                }
+            }
+        }
+
+        /*binding.btnLogin.setOnClickListener {
 
             val dni = binding.idEditText.text.toString().trim()
             val pass = binding.passwordEditField.text.toString().trim()
             var emptyfields = false
             var validFields = false
 
-
-
-            /*if (dni.isEmpty() && pass.isEmpty()){
-                binding.idField.error = getString(R.string.error_empty_field)
-                binding.idField.error = getString(R.string.error_empty_field)
-                return@setOnClickListener
-            }*/
-
             if (dni.isEmpty()){
                 binding.idField.error = getString(R.string.error_empty_field)
                 emptyfields = true
-                //return@setOnClickListener
 
-                //binding.idField.error = getString(R.string.required)
-                //binding.idField.error = null
-                //Snackbar.make(it, "Debes completar ambos campos", Snackbar.LENGTH_LONG).show()
-
-                /*binding.idField.setHelperTextColor(ColorStateList.valueOf(Color.RED))
-                binding.idField.setBoxStrokeColorStateList(ColorStateList.valueOf(Color.RED))
-                binding.idField.hintTextColor = ColorStateList.valueOf(Color.RED)*/
 
             }
 
-           /* if (!validID(binding.idEditText.text.toString()) && dni.isNotEmpty()){
-                binding.idField.error = getString(R.string.error_id_field)
-            }*/
 
             if (pass.isEmpty()){
                 binding.passwordField.error = getString(R.string.error_empty_field)
                 emptyfields = true
-                //return@setOnClickListener
-
-                /*binding.passwordField.setHelperTextColor(ColorStateList.valueOf(Color.RED))
-                binding.passwordField.setBoxStrokeColorStateList(ColorStateList.valueOf(Color.RED))
-                binding.passwordField.hintTextColor = ColorStateList.valueOf(Color.RED)*/
             }
 
             if (emptyfields){
@@ -112,14 +102,9 @@ class LoginActivity : AppCompatActivity() {
                 binding.idField.error = getString(R.string.error_id_field)
                 return@setOnClickListener
 
-                /*binding.idField.helperText = "DNI Invalido"
-                binding.idField.setHelperTextColor(ColorStateList.valueOf(Color.RED))
-                binding.idField.setBoxStrokeColorStateList(ColorStateList.valueOf(Color.RED))
-                binding.idField.hintTextColor = ColorStateList.valueOf(Color.RED)*/
-
             }
 
-        }
+        }*/
 
 
         //boton salir aplicación
