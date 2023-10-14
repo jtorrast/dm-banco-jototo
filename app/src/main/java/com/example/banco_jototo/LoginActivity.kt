@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.view.View
 import android.widget.EditText
 import com.example.banco_jototo.databinding.ActivityLoginBinding
 import com.example.banco_jototo.databinding.ActivityMainBinding
@@ -18,6 +19,9 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -90,6 +94,10 @@ class LoginActivity : AppCompatActivity() {
 
         }
 
+        //boton salir aplicación
+        binding.btnExit.setOnClickListener {
+            finish()
+        }
 
         //boton salir aplicación
         binding.btnExit.setOnClickListener {
