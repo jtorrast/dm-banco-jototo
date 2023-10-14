@@ -6,12 +6,12 @@
         <type value="RUNNING_DEVICE_TARGET" />
         <deviceKey>
           <Key>
-            <type value="VIRTUAL_DEVICE_PATH" />
-            <value value="C:\Users\torra\.android\avd\Nexus_5X_API_33.avd" />
+            <type value="SERIAL_NUMBER" />
+            <value value="adb-15051JEC210970-xmVE89._adb-tls-connect._tcp" />
           </Key>
         </deviceKey>
       </Target>
     </runningDeviceTargetSelectedWithDropDown>
-    <timeTargetWasSelectedWithDropDown value="2023-10-14T01:52:13.455948900Z" />
+    <timeTargetWasSelectedWithDropDown value="2023-10-14T03:33:33.405245900Z" />
   </component>
 </project>
