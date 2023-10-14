@@ -5,6 +5,8 @@ import android.content.res.ColorStateList
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.widget.EditText
 import com.example.banco_jototo.databinding.ActivityLoginBinding
 import com.example.banco_jototo.databinding.ActivityMainBinding
@@ -20,11 +22,43 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.idEditText.addTextChangedListener(object : TextWatcher{
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                binding.idField.error = null
+            }
+        })
+
+        binding.passwordEditField.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                val pass = s.toString().trim()
+                if (pass.length < 5){
+                    binding.passwordField.error = getString(R.string.error_password_length)
+                }else{
+                    binding.passwordField.error = null
+                }
+            }
+        })
+
+
         binding.btnLogin.setOnClickListener {
 
             val dni = binding.idEditText.text.toString().trim()
             val pass = binding.passwordEditField.text.toString().trim()
             var emptyfields = false
+
+
 
             /*if (dni.isEmpty() && pass.isEmpty()){
                 binding.idField.error = getString(R.string.error_empty_field)
@@ -34,6 +68,8 @@ class LoginActivity : AppCompatActivity() {
 
             if (dni.isEmpty()){
                 binding.idField.error = getString(R.string.error_empty_field)
+                emptyfields = true
+                //return@setOnClickListener
 
                 //binding.idField.error = getString(R.string.required)
                 //binding.idField.error = null
@@ -43,17 +79,20 @@ class LoginActivity : AppCompatActivity() {
                 binding.idField.setBoxStrokeColorStateList(ColorStateList.valueOf(Color.RED))
                 binding.idField.hintTextColor = ColorStateList.valueOf(Color.RED)*/
 
-                emptyfields = true
-
             }
+
+           /* if (!validID(binding.idEditText.text.toString()) && dni.isNotEmpty()){
+                binding.idField.error = getString(R.string.error_id_field)
+            }*/
 
             if (pass.isEmpty()){
                 binding.passwordField.error = getString(R.string.error_empty_field)
+                emptyfields = true
+                //return@setOnClickListener
 
                 /*binding.passwordField.setHelperTextColor(ColorStateList.valueOf(Color.RED))
                 binding.passwordField.setBoxStrokeColorStateList(ColorStateList.valueOf(Color.RED))
                 binding.passwordField.hintTextColor = ColorStateList.valueOf(Color.RED)*/
-                emptyfields = true
             }
 
             if (emptyfields){
@@ -66,6 +105,7 @@ class LoginActivity : AppCompatActivity() {
                 startActivity(intent)
             }else{
                 binding.idField.error = getString(R.string.error_id_field)
+                return@setOnClickListener
 
                 /*binding.idField.helperText = "DNI Invalido"
                 binding.idField.setHelperTextColor(ColorStateList.valueOf(Color.RED))
