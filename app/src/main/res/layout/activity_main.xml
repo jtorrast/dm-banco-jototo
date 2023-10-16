@@ -74,10 +74,34 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-
-
     </com.google.android.material.card.MaterialCardView>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/bottomAppBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:navigationIcon="@drawable/ic_menu"
+            app:navigationIconTint="@color/white"
+            app:hideOnScroll="true"
+            app:fabAnimationMode="slide"
+            android:backgroundTint="#1B2F4A"
+            style="@style/Widget.MaterialComponents.BottomAppBar.Colored"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/float_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_bank_account"
+            app:shapeAppearance="@style/Widget.MaterialComponents.BottomAppBar.Colored"
+            android:backgroundTint="#4D83C8"
+            app:layout_anchor="@id/bottomAppBar"/>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 
 
