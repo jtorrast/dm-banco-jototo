@@ -9,4 +9,5 @@
     <string name="error_id_field">DNI Invalido</string>
     <string name="error_empty_field">Campo obligatorio</string>
     <string name="error_password_length">La contraseña debe tener al menos 5 caracteres.</string>
+    <string name="card_welcoming">Bienvenido/a</string>
 </resources>
