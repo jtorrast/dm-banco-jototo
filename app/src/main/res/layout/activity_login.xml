@@ -132,36 +132,22 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnLogin"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+       style="@style/btnHighlighted"
         android:text="@string/text_btn_login"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:textColor="@color/white"
-        android:paddingTop="16dp"
-        android:paddingBottom="16dp"
-        app:backgroundTint="@color/azul_electrico"
         app:icon="@drawable/ic_login"
-        app:iconGravity="textStart"
-        app:iconSize="30dp"
-        app:iconTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/guideline3"
         android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"/>
+        android:layout_marginEnd="16dp"
+        />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnExit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+       style="@style/btnSubtle"
         android:layout_marginTop="32dp"
         android:text="@string/text_btn_exit"
-        android:textColor="@color/white"
-        app:backgroundTint="@color/azul_oscuro_profundo"
         app:icon="@drawable/ic_close"
-        app:iconGravity="textStart"
-        app:iconTint="@color/white"
         app:layout_constraintEnd_toEndOf="@id/guideline5"
         app:layout_constraintStart_toStartOf="@id/guideline4"
         app:layout_constraintTop_toBottomOf="@id/btnLogin" />
