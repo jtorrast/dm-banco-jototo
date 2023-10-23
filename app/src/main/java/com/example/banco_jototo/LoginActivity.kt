@@ -100,7 +100,6 @@ class LoginActivity : AppCompatActivity() {
         binding.btnExit.setOnClickListener {
             finish()
         }
-
     }
 
     fun validID(dni: String): Boolean{

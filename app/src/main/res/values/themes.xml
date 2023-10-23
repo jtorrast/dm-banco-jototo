@@ -30,4 +30,18 @@
         <item name="iconTint">@color/white</item>
     </style>
 
+    <style name="btnMainMenu" parent="btnHighlighted">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:backgroundTint">@color/azul_oscuro_medio</item>
+        <item name="iconSize">20dp</item>
+        <item name="iconTint">@color/azul_electrico</item>
+        <item name="iconGravity">start</item>
+        <item name="cornerRadius">40dp</item>
+    </style>
+
 </resources>
