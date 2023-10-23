@@ -109,7 +109,6 @@
         app:endIconTint="#4D83C8"
         app:endIconMode="password_toggle"
         app:helperTextTextColor="@color/white"
-
         app:helperText="Obligatorio"
         app:layout_constraintEnd_toEndOf="@id/id_field"
         app:layout_constraintStart_toStartOf="@id/id_field"
