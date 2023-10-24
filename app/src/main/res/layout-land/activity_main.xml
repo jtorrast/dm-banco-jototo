@@ -77,94 +77,72 @@
 
     </com.google.android.material.card.MaterialCardView>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnGlobalPosition"
-        style="@style/btnMainMenuLandscape"
-        android:layout_width="0dp"
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/text_btnGlobalPosition"
-        app:icon="@drawable/ic_global_position"
-        app:layout_constraintEnd_toStartOf="@id/guideline2ver"
-        app:layout_constraintStart_toEndOf="@id/guideline1ver"
-        app:layout_constraintTop_toBottomOf="@id/welcome_card_view" />
+        app:layout_constraintTop_toBottomOf="@id/welcome_card_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        >
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnTransactions"
-        style="@style/btnMainMenuLandscape"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/text_btnTransactions"
-        app:icon="@drawable/ic_transactions"
-        app:layout_constraintEnd_toStartOf="@id/guideline3ver"
-        app:layout_constraintStart_toEndOf="@id/guideline2ver"
-        app:layout_constraintTop_toBottomOf="@id/welcome_card_view" />
+       <TableLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:gravity="center"
+           android:layout_marginTop="16dp"
+           android:layout_marginStart="16dp"
+           android:layout_marginEnd="16dp">
+           <TableRow
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:weightSum="3"
+               >
+               <com.google.android.material.button.MaterialButton
+                   android:id="@+id/btnGlobalPosition"
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   style="@style/btnMainMenuLandscape"
+                   android:text="@string/text_btnGlobalPosition"
+                   app:icon="@drawable/ic_global_position"
+                   android:layout_marginStart="8dp"
+                   />
+               <com.google.android.material.button.MaterialButton
+                   android:id="@+id/btnTransactions"
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   style="@style/btnMainMenuLandscape"
+                   android:text="@string/text_btnTransactions"
+                   app:icon="@drawable/ic_transactions"
+                   android:layout_marginStart="8dp"/>
+               <com.google.android.material.button.MaterialButton
+                   android:id="@+id/btnTransfers"
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1"
+                   style="@style/btnMainMenuLandscape"
+                   android:text="@string/text_btnTransfers"
+                   app:icon="@drawable/ic_transfers"
+                   android:layout_marginStart="8dp"/>
+           </TableRow>
+           <TableRow
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:weightSum="3">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnTransfers"
-        style="@style/btnMainMenuLandscape"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/text_btnTransfers"
-        app:icon="@drawable/ic_transfers"
-        app:layout_constraintEnd_toStartOf="@id/guideline4ver"
-        app:layout_constraintStart_toEndOf="@id/guideline3ver"
-        app:layout_constraintTop_toBottomOf="@id/welcome_card_view" />
+           </TableRow>
+       </TableLayout>
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnChangePass"
-        style="@style/btnMainMenuLandscape"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/text_btnChangePass"
-        app:icon="@drawable/ic_change_password"
-        app:layout_constraintEnd_toStartOf="@id/guideline2ver"
-        app:layout_constraintStart_toEndOf="@id/guideline1ver"
-        app:layout_constraintTop_toBottomOf="@id/btnGlobalPosition"/>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnPromotions"
-        style="@style/btnMainMenuLandscape"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/text_btnPromotions"
-        app:icon="@drawable/ic_promote"
-        app:layout_constraintEnd_toStartOf="@id/guideline3ver"
-        app:layout_constraintStart_toEndOf="@id/guideline2ver"
-        app:layout_constraintTop_toBottomOf="@id/btnTransactions" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnAtm"
-        style="@style/btnMainMenuLandscape"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/text_btnAtm"
-        app:icon="@drawable/ic_atm"
-        app:layout_constraintEnd_toStartOf="@id/guideline4ver"
-        app:layout_constraintStart_toEndOf="@id/guideline3ver"
-        app:layout_constraintTop_toBottomOf="@id/btnTransfers"/>
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btnExit"
-        style="@style/btnSubtle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/text_btn_exit"
-        app:icon="@drawable/ic_close"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toStartOf="@id/guideline4ver"
-        app:layout_constraintStart_toEndOf="@id/guideline3ver"
-        app:layout_constraintTop_toBottomOf="@id/btnPromotions"/>
+    </androidx.core.widget.NestedScrollView>
 
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/coord_bottom_app_bar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="-55dp">
 
         <com.google.android.material.bottomappbar.BottomAppBar
             android:id="@+id/bottomAppBar"
@@ -186,44 +164,22 @@
             android:src="@drawable/ic_bank_account"
             android:tint="@color/azul_oscuro_medio"
             app:layout_anchor="@id/bottomAppBar"
-            app:shapeAppearance="@style/Widget.MaterialComponents.BottomAppBar.Colored"/>
+            app:shapeAppearance="@style/Widget.MaterialComponents.BottomAppBar.Colored" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-    <androidx.constraintlayout.widget.Barrier
-        android:id="@+id/barrier2"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:barrierDirection="left"
-        app:constraint_referenced_ids="coord_bottom_app_bar" />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4ver"
+        android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.98" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline3ver"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.667" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2ver"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.333" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline1ver"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.02872777" />
-
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.21" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
