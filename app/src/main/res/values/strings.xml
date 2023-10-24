@@ -15,4 +15,6 @@
     <string name="confirm_new_pass">Confirma la nueva contraseña</string>
     <string name="text_confirm_pass">Actualizar contraseña</string>
     <string name="text_btn_back">Atrás</string>
+    <string name="error_confirm_pass">La contraseña no coincide</string>
+    <string name="snackbar_pass_change">Contraseña actualizada</string>
 </resources>

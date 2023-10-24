@@ -105,6 +105,7 @@
             app:icon="@drawable/ic_transfers" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnChangePass"
             style="@style/btnMainMenu"
             android:text="CAMBIAR CONTRASEÑA"
             app:icon="@drawable/ic_change_password" />
