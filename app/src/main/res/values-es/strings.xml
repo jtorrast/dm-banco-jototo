@@ -17,4 +17,13 @@
     <string name="text_btn_back">Atrás</string>
     <string name="error_confirm_pass">La contraseña no coincide</string>
     <string name="snackbar_pass_change">Contraseña actualizada</string>
+    <string name="helper_text_login_fields">Obligatorio</string>
+    <string name="hint_field_login_pass">Contraseña</string>
+    <string name="hint_field_login_id">NIF/NIE</string>
+    <string name="text_btnGlobalPosition">POSICIÓN GLOBAL</string>
+    <string name="text_btnTransactions">MOVIMIENTOS</string>
+    <string name="text_btnTransfers">TRANSFERENCIAS</string>
+    <string name="text_btnChangePass">CAMBIAR CONTRASEÑA</string>
+    <string name="text_btnPromotions">PROMOCIONES</string>
+    <string name="text_btnAtm">CAJEROS</string>
 </resources>

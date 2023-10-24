@@ -95,12 +95,9 @@ class LoginActivity : AppCompatActivity() {
 
         }
 
-
-
-
         //boton salir aplicación
         binding.btnExit.setOnClickListener {
-            finish()
+            finishAffinity()
         }
     }
 

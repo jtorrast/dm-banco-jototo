@@ -17,4 +17,13 @@
     <string name="text_btn_back">Back</string>
     <string name="error_confirm_pass">Password does not match</string>
     <string name="snackbar_pass_change">Updated password</string>
+    <string name="helper_text_login_fields">Required</string>
+    <string name="hint_field_login_pass">Password</string>
+    <string name="hint_field_login_id">ID</string>
+    <string name="text_btnGlobalPosition">GLOBAL POSITION</string>
+    <string name="text_btnTransactions">TRANSACTIONS</string>
+    <string name="text_btnTransfers">TRANSFERS</string>
+    <string name="text_btnChangePass">CHANGE PASSWORD</string>
+    <string name="text_btnPromotions">PROMOTIONS</string>
+    <string name="text_btnAtm">CASH MACHINES</string>
 </resources>

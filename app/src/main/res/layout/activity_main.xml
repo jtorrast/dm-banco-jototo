@@ -90,40 +90,46 @@
         app:layout_constraintTop_toBottomOf="@id/guideline3">
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnGlobalPosition"
             style="@style/btnMainMenu"
-            android:text="POSICIÓN GLOBAL"
+            android:text="@string/text_btnGlobalPosition"
             app:icon="@drawable/ic_global_position" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnTransactions"
             style="@style/btnMainMenu"
-            android:text="MOVIMIENTOS"
+            android:text="@string/text_btnTransactions"
             app:icon="@drawable/ic_transactions" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnTransfers"
             style="@style/btnMainMenu"
-            android:text="TRANSFERENCIAS"
+            android:text="@string/text_btnTransfers"
             app:icon="@drawable/ic_transfers" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnChangePass"
             style="@style/btnMainMenu"
-            android:text="CAMBIAR CONTRASEÑA"
+            android:text="@string/text_btnChangePass"
             app:icon="@drawable/ic_change_password" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPromotions"
             style="@style/btnMainMenu"
-            android:text="PROMOCIONES"
+            android:text="@string/text_btnPromotions"
             app:icon="@drawable/ic_promote" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAtm"
             style="@style/btnMainMenu"
-            android:text="CAJEROS"
+            android:text="@string/text_btnAtm"
             app:icon="@drawable/ic_atm" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/text_btn_login"
             style="@style/btnSubtle"
             android:layout_gravity="center"
-            android:text="Salir"
+            android:text="@string/exit"
             app:icon="@drawable/ic_close"
 
             />

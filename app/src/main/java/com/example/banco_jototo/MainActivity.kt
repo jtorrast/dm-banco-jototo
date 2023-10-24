@@ -25,6 +25,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, ChangePasswordActivity2::class.java)
             startActivity(intent)
         }
+
+        binding.btnExit.setOnClickListener {
+            finishAffinity()
+        }
     }
 
 
