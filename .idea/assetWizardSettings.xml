@@ -37,7 +37,7 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
-                                                <entry key="imagePath" value="C:\Users\torra\Downloads\bank-transfer.png" />
+                                                <entry key="imagePath" value="C:\Users\torra\Downloads\ic_bank.png" />
                                                 <entry key="opacityPercent" value="80" />
                                               </map>
                                             </option>
@@ -71,7 +71,7 @@
                                   <option name="values">
                                     <map>
                                       <entry key="assetType" value="IMAGE" />
-                                      <entry key="imageAsset" value="C:\Users\torra\Downloads\bank-transfer.png" />
+                                      <entry key="imageAsset" value="C:\Users\torra\Downloads\ic_bank.png" />
                                       <entry key="theme" value="CUSTOM" />
                                     </map>
                                   </option>
@@ -100,6 +100,8 @@
                                             <option name="values">
                                               <map>
                                                 <entry key="color" value="000000" />
+                                                <entry key="imagePath" value="C:\Users\torra\Downloads\ic_bank.png" />
+                                                <entry key="scalingPercent" value="39" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -127,6 +129,13 @@
                                           </PersistentState>
                                         </value>
                                       </entry>
+                                    </map>
+                                  </option>
+                                  <option name="values">
+                                    <map>
+                                      <entry key="backgroundAssetType" value="COLOR" />
+                                      <entry key="backgroundColor" value="0c1826" />
+                                      <entry key="outputName" value="mi_ic_launcher" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -295,11 +304,6 @@
                                 </PersistentState>
                               </value>
                             </entry>
-                          </map>
-                        </option>
-                        <option name="values">
-                          <map>
-                            <entry key="outputIconType" value="ACTIONBAR" />
                           </map>
                         </option>
                       </PersistentState>
