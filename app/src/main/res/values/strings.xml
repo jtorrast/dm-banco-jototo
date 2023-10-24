@@ -13,4 +13,6 @@
     <string name="welcome_text">Tu banco online</string>
     <string name="new_pass">Nueva contraseña</string>
     <string name="confirm_new_pass">Confirma la nueva contraseña</string>
+    <string name="text_confirm_pass">Actualizar contraseña</string>
+    <string name="text_btn_back">Atrás</string>
 </resources>
