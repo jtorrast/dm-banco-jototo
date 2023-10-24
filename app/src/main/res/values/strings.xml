@@ -11,4 +11,6 @@
     <string name="error_password_length">La contraseña debe tener al menos 5 caracteres.</string>
     <string name="card_welcoming">Bienvenido/a</string>
     <string name="welcome_text">Tu banco online</string>
+    <string name="new_pass">Nueva contraseña</string>
+    <string name="confirm_new_pass">Confirma la nueva contraseña</string>
 </resources>
