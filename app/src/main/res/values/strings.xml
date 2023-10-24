@@ -1,20 +1,20 @@
 <resources>
     <string name="app_name">Banco-jototo</string>
     <string name="bank_name">BankOnMe</string>
-    <string name="text_btn_login">Continuar</string>
-    <string name="text_btn_exit">Salir</string>
-    <string name="terms_use_text">Por favor, inicie sesión. Si accede a nuestro servicio, estará de acuerdo con los términos de uso.</string>
-    <string name="required">Obligatorio</string>
+    <string name="text_btn_login">Continue</string>
+    <string name="text_btn_exit">Exit</string>
+    <string name="terms_use_text">Please login. If you access our service, you agree to the terms of use.</string>
+    <string name="required">Required</string>
     <string name="error_field">Error</string>
-    <string name="error_id_field">DNI Inválido</string>
-    <string name="error_empty_field">Campo obligatorio</string>
-    <string name="error_password_length">La contraseña debe tener al menos 5 caracteres.</string>
-    <string name="card_welcoming">Bienvenido/a</string>
-    <string name="welcome_text">Tu banco online</string>
-    <string name="new_pass">Nueva contraseña</string>
-    <string name="confirm_new_pass">Confirma la nueva contraseña</string>
-    <string name="text_confirm_pass">Actualizar contraseña</string>
-    <string name="text_btn_back">Atrás</string>
-    <string name="error_confirm_pass">La contraseña no coincide</string>
-    <string name="snackbar_pass_change">Contraseña actualizada</string>
+    <string name="error_id_field">Invalid ID</string>
+    <string name="error_empty_field">Required Field</string>
+    <string name="error_password_length">The password must be at least 5 characters.</string>
+    <string name="card_welcoming">Welcome</string>
+    <string name="welcome_text">Your online bank</string>
+    <string name="new_pass">New Password</string>
+    <string name="confirm_new_pass">Confirm the new password</string>
+    <string name="text_confirm_pass">Update password</string>
+    <string name="text_btn_back">Back</string>
+    <string name="error_confirm_pass">Password does not match</string>
+    <string name="snackbar_pass_change">Updated password</string>
 </resources>
