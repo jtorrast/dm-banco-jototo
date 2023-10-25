@@ -7,6 +7,7 @@
     <string name="error_id_field">Invalid ID</string>
     <string name="error_empty_field">Required Field</string>
     <string name="error_password_length">The password must be at least 5 characters.</string>
+    <string name="error_empty_edit_text">You have to type in a password</string>
     <string name="card_welcoming">Welcome</string>
     <string name="welcome_text">Your online bank</string>
     <string name="new_pass">New Password</string>

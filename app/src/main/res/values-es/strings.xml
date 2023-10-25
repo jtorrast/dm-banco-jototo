@@ -7,6 +7,7 @@
     <string name="error_id_field">DNI Inválido</string>
     <string name="error_empty_field">Campo obligatorio</string>
     <string name="error_password_length">La contraseña debe tener al menos 5 caracteres.</string>
+    <string name="error_empty_edit_text">Tienes que escribir una contraseña</string>
     <string name="card_welcoming">Bienvenido/a</string>
     <string name="welcome_text">Tu banco online</string>
     <string name="new_pass">Nueva contraseña</string>
