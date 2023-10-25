@@ -30,6 +30,8 @@ class ChangePasswordActivity2 : AppCompatActivity() {
 
         }
 
+        binding.confirmPasswordFieldEditTex.onFocusChangeListener
+
         binding.btnExit.setOnClickListener {
             finish()
         }

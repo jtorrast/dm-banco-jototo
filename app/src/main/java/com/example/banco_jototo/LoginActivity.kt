@@ -73,7 +73,7 @@ class LoginActivity : AppCompatActivity() {
             }
 
             if (validID(dni)){
-                validFields = true;
+                validFields = true
             }
 
             if (emptyfields && validFields == false){
