@@ -23,35 +23,47 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.idEditText.addTextChangedListener(object : TextWatcher{
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-            }
+        binding.idEditText.onFocusChangeListener = View.OnFocusChangeListener { v, hasFocus ->
+            val dni = binding.idEditText.text.toString().trim().uppercase()
 
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-            }
 
-            override fun afterTextChanged(s: Editable?) {
-                binding.idField.error = null
-            }
-        })
+            if (!hasFocus) {
 
-        binding.passwordEditField.addTextChangedListener(object : TextWatcher {
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-            }
+                if (dni.isEmpty()) {
+                    binding.idField.error = getString(R.string.error_empty_field)
+                }else{
+                    binding.idField.error = null
 
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                    if (!validID(dni)){
+                        binding.idField.error = getString(R.string.error_id_field)
+                    }else{
+                        binding.idField.error = null
+                    }
+                }
             }
+        }
 
-            override fun afterTextChanged(s: Editable?) {
-                val pass = s.toString().trim()
-                if (pass.length < 5){
-                    binding.passwordField.error = getString(R.string.error_password_length)
+        binding.passwordEditField.onFocusChangeListener = View.OnFocusChangeListener { v, hasFocus ->
+            val pass = binding.passwordEditField.text.toString().trim().uppercase()
+
+
+            if (!hasFocus) {
+
+                if (pass.isEmpty()) {
+                    binding.passwordField.error = getString(R.string.error_empty_field)
                 }else{
                     binding.passwordField.error = null
-                }
 
+                    if (pass.length < 5){
+                        binding.passwordField.error = getString(R.string.error_password_length)
+                    }else{
+                        binding.passwordField.error = null
+                    }
+                }
             }
-        })
+        }
+
+
 
 
         binding.btnLogin.setOnClickListener {
