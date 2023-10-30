@@ -25,5 +25,10 @@
     <string name="text_btnChangePass">CHANGE PASSWORD</string>
     <string name="text_btnPromotions">PROMOTIONS</string>
     <string name="text_btnAtm">CASH MACHINES</string>
+    <string name="text_transfers_title">Transfers</string>
+    <string name="caption_account_selection">Choose your account</string>
+    <string name="checkOwnAccount">Own account</string>
+    <string name="checkOtherAccount">Else\'s account</string>
+    <string name="text_qty">Quantity:</string>
 
 </resources>
