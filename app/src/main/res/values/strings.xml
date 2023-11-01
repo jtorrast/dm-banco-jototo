@@ -31,5 +31,7 @@
     <string name="checkOtherAccount">Else\'s account</string>
     <string name="text_qty">Quantity:</string>
     <string name="text_justifying">Send a receipt</string>
+    <string name="send_transfer">Send transfer</string>
+    <string name="cancel_transfer">Cancel</string>
 
 </resources>
