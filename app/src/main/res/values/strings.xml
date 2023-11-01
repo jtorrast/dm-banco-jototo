@@ -33,5 +33,6 @@
     <string name="text_justifying">Send a receipt</string>
     <string name="send_transfer">Send transfer</string>
     <string name="cancel_transfer">Cancel</string>
+    <string name="text_edit_else_accout">Write recipient\'s account number</string>
 
 </resources>

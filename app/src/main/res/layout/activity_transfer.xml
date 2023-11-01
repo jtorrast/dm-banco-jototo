@@ -29,13 +29,10 @@
 
     <Spinner
         android:id="@+id/spinnerAccount"
-        style="@style/Widget.AppCompat.Spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="8dp"
-        android:background="@color/azul_oscuro_medio"
-        android:popupBackground="@color/azul_oscuro_medio"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/titleChooseAccount" />
@@ -52,12 +49,14 @@
         app:layout_constraintTop_toBottomOf="@id/spinnerAccount">
 
         <RadioButton
+            android:id="@+id/radioOwnAccount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/checkOwnAccount"
             android:textColor="@color/white" />
 
         <RadioButton
+            android:id="@+id/radioElseAccount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/checkOtherAccount"
@@ -66,15 +65,27 @@
     </RadioGroup>
 
     <Spinner
-        android:id="@+id/spinnerReceiverAccount"
-        style="@style/Widget.AppCompat.Spinner"
+        android:id="@+id/spinnerReceiverOwnAccount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="8dp"
-        android:background="@color/azul_oscuro_medio"
-        android:popupBackground="@color/azul_oscuro_medio"
-        android:visibility="visible"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/checkboxGroup" />
+
+    <EditText
+        android:id="@+id/editElseAccount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        android:visibility="invisible"
+        android:hint="@string/text_edit_else_accout"
+        android:textColorHint="@color/azul_electrico_palido"
+        android:textColor="@color/white"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/checkboxGroup" />
@@ -86,7 +97,7 @@
         android:layout_marginHorizontal="16dp"
         android:orientation="horizontal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/spinnerReceiverAccount">
+        app:layout_constraintTop_toBottomOf="@id/spinnerReceiverOwnAccount">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -107,9 +118,7 @@
             android:id="@+id/spCurrency"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:dropDownSelector="@color/azul_electrico_palido"
-            android:dropDownWidth="wrap_content"
-            />
+            android:dropDownWidth="wrap_content"/>
     </LinearLayout>
     <CheckBox
         android:id="@+id/checkboxReceipt"

@@ -2,6 +2,7 @@ package com.example.banco_jototo
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.core.graphics.toColor
@@ -16,15 +17,21 @@ class TransferActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         //datos spinner cuenta
-        val datos = arrayOf("ES71-4857-6875-1234", "ES71-4857-6452-6423")
 
+        //emisor
+        val datos = arrayOf("ES71-4857-6875-1234", "ES71-4857-6452-6423")
         val adapterOwnAccount = ArrayAdapter(this, R.layout.spinner_currency_item, datos)
 
         val spinnerOwnAccount = binding.spinnerAccount
-
-        adapterOwnAccount.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-
+        adapterOwnAccount.setDropDownViewResource(R.layout.spiner_drop_currency_item)
         spinnerOwnAccount.adapter = adapterOwnAccount
+
+        //receptor
+        val adapterReciberOwnAccount = ArrayAdapter(this, R.layout.spinner_currency_item, datos)
+
+        val spinnerReciberOwnAccount = binding.spinnerReceiverOwnAccount
+        adapterReciberOwnAccount.setDropDownViewResource(R.layout.spiner_drop_currency_item)
+        spinnerReciberOwnAccount.adapter = adapterReciberOwnAccount
 
 
         //datos spinner simbolo divisa
@@ -36,6 +43,16 @@ class TransferActivity : AppCompatActivity() {
         adapterCurrency.setDropDownViewResource(R.layout.spiner_drop_currency_item)
 
         spinnerCurrency.adapter = adapterCurrency
+
+        binding.radioOwnAccount.setOnClickListener {
+            binding.editElseAccount.visibility = View.INVISIBLE
+            binding.spinnerReceiverOwnAccount.visibility = View.VISIBLE
+        }
+
+        binding.radioElseAccount.setOnClickListener {
+            binding.spinnerReceiverOwnAccount.visibility = View.INVISIBLE
+            binding.editElseAccount.visibility = View.VISIBLE
+        }
 
 
 
