@@ -34,5 +34,13 @@
     <string name="send_transfer">Send transfer</string>
     <string name="cancel_transfer">Cancel</string>
     <string name="text_edit_else_accout">Write recipient\'s account number</string>
+    <string name="snack_text_radioButton">Select an account type</string>
+    <string name="sender_account">Sender account:</string>
+    <string name="recipient_account">Recipient account:</string>
+    <string name="recipient_own_account">Recipient own account:</string>
+    <string name="amount">Amount:</string>
+    <string name="text_checked_receipt">Send a receipt</string>
+    <string name="text_not_checked_receipt">Not send a receipt</string>
+
 
 </resources>
