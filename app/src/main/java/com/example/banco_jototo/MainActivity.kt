@@ -21,6 +21,11 @@ class MainActivity : AppCompatActivity() {
 
         binding.viewDni.text = dni
 
+        binding.btnTransactions.setOnClickListener {
+            val intent = Intent(this, TransferActivity::class.java)
+            startActivity(intent)
+        }
+
         binding.btnChangePass.setOnClickListener {
             val intent = Intent(this, ChangePasswordActivity2::class.java)
             startActivity(intent)
