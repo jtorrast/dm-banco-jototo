@@ -25,5 +25,22 @@
     <string name="text_btnChangePass">CHANGE PASSWORD</string>
     <string name="text_btnPromotions">PROMOTIONS</string>
     <string name="text_btnAtm">CASH MACHINES</string>
+    <string name="text_transfers_title">Transfers</string>
+    <string name="caption_account_selection">Choose your account</string>
+    <string name="checkOwnAccount">Own account</string>
+    <string name="checkOtherAccount">Else\'s account</string>
+    <string name="text_qty">Quantity:</string>
+    <string name="text_justifying">Send a receipt</string>
+    <string name="send_transfer">Send transfer</string>
+    <string name="cancel_transfer">Cancel</string>
+    <string name="text_edit_else_accout">Write recipient\'s account number</string>
+    <string name="snack_text_radioButton">Select an account type</string>
+    <string name="sender_account">Sender account:</string>
+    <string name="recipient_account">Recipient account:</string>
+    <string name="recipient_own_account">Recipient own account:</string>
+    <string name="amount">Amount:</string>
+    <string name="text_checked_receipt">Send a receipt</string>
+    <string name="text_not_checked_receipt">Not send a receipt</string>
+
 
 </resources>

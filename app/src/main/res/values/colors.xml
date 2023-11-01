@@ -5,6 +5,7 @@
     <color name="azul_electrico_palido">#4D83C8</color>
     <color name="azul_oscuro_medio">#1B2F4A</color>
     <color name="azul_oscuro_profundo">#0C1826</color>
+    <color name="red_error">#ff7043</color>
 
 
 </resources>

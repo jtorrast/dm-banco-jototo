@@ -15,8 +15,13 @@ class WelcomeActivity : AppCompatActivity() {
 
         //boton continuar
         binding.btnLogin.setOnClickListener {
+
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
+
+            //Descomentar para probar
+            /*val intent = Intent(this, TransferActivity::class.java)
+            startActivity(intent)*/
         }
 
         //boton salir aplicación

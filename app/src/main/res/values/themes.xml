@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.Bancojototo" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/azul_electrico_palido</item>
         <item name="android:statusBarColor">@color/cardview_dark_background</item>
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
     <style name="Theme.Bancojototo" parent="Base.Theme.Bancojototo" />
 
@@ -53,6 +53,19 @@
         <item name="iconGravity">textTop</item>
         <item name="cornerRadius">40dp</item>
     </style>
+
+    <style name="titleSectionStyle" parent="@style/TextAppearance.MaterialComponents.Headline4">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="SpinnerTextViewItem" parent="@android:style/Widget.TextView" >
+        <item name="android:textSize" >20sp</item>
+        <item name="android:textStyle" >bold</item>
+    </style>
+
 
 
 </resources>

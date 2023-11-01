@@ -25,5 +25,21 @@
     <string name="text_btnChangePass">CAMBIAR CONTRASEÑA</string>
     <string name="text_btnPromotions">PROMOCIONES</string>
     <string name="text_btnAtm">CAJEROS</string>
+    <string name="text_transfers_title">Transferencias</string>
+    <string name="caption_account_selection">Elige tu cuenta:</string>
+    <string name="checkOwnAccount">Cuenta propia</string>
+    <string name="checkOtherAccount">Cuenta ajena</string>
+    <string name="text_qty">Cantidad:</string>
+    <string name="text_justifying">Enviar justificante</string>
+    <string name="send_transfer">Enviar transferencia</string>
+    <string name="cancel_transfer">Cancelar</string>
+    <string name="text_edit_else_accout">Escribe el núm. cuenta ajena</string>
+    <string name="snack_text_radioButton">Selecciona un tipo de cuenta</string>
+    <string name="sender_account">Cuenta emisora:</string>
+    <string name="recipient_account">"Cuenta beneficiaria: "</string>
+    <string name="recipient_own_account">"Cuenta propia receptora: "</string>
+    <string name="amount">"Importe: "</string>
+    <string name="text_checked_receipt">Enviar justificante</string>
+    <string name="text_not_checked_receipt">No enviar justificante</string>
 
 </resources>
