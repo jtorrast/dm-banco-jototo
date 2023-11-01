@@ -15,16 +15,28 @@ class TransferActivity : AppCompatActivity() {
         binding = ActivityTransferBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //datos spinner
+        //datos spinner cuenta
         val datos = arrayOf("ES71-4857-6875-1234", "ES71-4857-6452-6423")
 
-        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, datos)
+        val adapterOwnAccount = ArrayAdapter(this, R.layout.spinner_currency_item, datos)
 
-        val spinner = binding.spinnerAccount
+        val spinnerOwnAccount = binding.spinnerAccount
 
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        adapterOwnAccount.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
 
-        spinner.adapter = adapter
+        spinnerOwnAccount.adapter = adapterOwnAccount
+
+
+        //datos spinner simbolo divisa
+        val divisas = arrayOf("€", "$", "GBP")
+        val adapterCurrency = ArrayAdapter(this, R.layout.spinner_currency_item, divisas)
+
+        val spinnerCurrency = binding.spCurrency
+
+        adapterCurrency.setDropDownViewResource(R.layout.spiner_drop_currency_item)
+
+        spinnerCurrency.adapter = adapterCurrency
+
 
 
     }

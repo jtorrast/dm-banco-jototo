@@ -25,5 +25,10 @@
     <string name="text_btnChangePass">CAMBIAR CONTRASEÑA</string>
     <string name="text_btnPromotions">PROMOCIONES</string>
     <string name="text_btnAtm">CAJEROS</string>
+    <string name="text_transfers_title">Transferencias</string>
+    <string name="caption_account_selection">Elige tu cuenta:</string>
+    <string name="checkOwnAccount">Cuenta propia</string>
+    <string name="checkOtherAccount">Cuenta ajena</string>
+    <string name="text_qty">Cantidad:</string>
 
 </resources>
