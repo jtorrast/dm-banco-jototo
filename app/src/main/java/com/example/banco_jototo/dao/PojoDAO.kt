@@ -1,4 +1,4 @@
-package com.example.bancoapiprofe.dao
+package com.example.banco_jototo.dao
 
 interface PojoDAO {
     fun add(obj: Any?): Long
