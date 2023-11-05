@@ -6,7 +6,8 @@
     <string name="terms_use_text">Please login. If you access our service, you agree to the terms of use.</string>
     <string name="error_id_field">Invalid ID</string>
     <string name="error_empty_field">Required Field</string>
-    <string name="error_password_length">The password must be at least 5 characters.</string>
+    <string name="error_password_length">The password must be at least 4 characters.</string>
+    <string name="error_wrong_password">Wrong password</string>
     <string name="error_empty_edit_text">You have to type in a password</string>
     <string name="card_welcoming">Welcome</string>
     <string name="welcome_text">Your online bank</string>

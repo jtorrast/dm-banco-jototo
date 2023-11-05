@@ -6,7 +6,7 @@
     <string name="terms_use_text">Por favor, inicie sesión. Si accede a nuestro servicio, estará de acuerdo con los términos de uso.</string>
     <string name="error_id_field">DNI Inválido</string>
     <string name="error_empty_field">Campo obligatorio</string>
-    <string name="error_password_length">La contraseña debe tener al menos 5 caracteres.</string>
+    <string name="error_password_length">La contraseña debe tener al menos 4 caracteres.</string>
     <string name="error_empty_edit_text">Tienes que escribir una contraseña</string>
     <string name="card_welcoming">Bienvenido/a</string>
     <string name="welcome_text">Tu banco online</string>
@@ -41,5 +41,6 @@
     <string name="amount">"Importe: "</string>
     <string name="text_checked_receipt">Enviar justificante</string>
     <string name="text_not_checked_receipt">No enviar justificante</string>
+    <string name="error_wrong_password">Contraseña incorrecta</string>
 
 </resources>

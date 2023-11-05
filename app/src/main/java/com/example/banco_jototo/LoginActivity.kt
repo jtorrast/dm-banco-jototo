@@ -9,16 +9,22 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
 import android.widget.EditText
+import android.widget.Toast
+import com.example.banco_jototo.bd.MiBancoOperacional
 import com.example.banco_jototo.databinding.ActivityLoginBinding
 import com.example.banco_jototo.databinding.ActivityMainBinding
+import com.example.banco_jototo.pojo.Cliente
 import com.google.android.material.snackbar.Snackbar
 
 class LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
+    private var passwordLength = 4
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+
 
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -54,7 +60,7 @@ class LoginActivity : AppCompatActivity() {
                 }else{
                     binding.passwordField.error = null
 
-                    if (pass.length < 5){
+                    if (pass.length < passwordLength){
                         binding.passwordField.error = getString(R.string.error_password_length)
                     }else{
                         binding.passwordField.error = null
@@ -93,10 +99,28 @@ class LoginActivity : AppCompatActivity() {
             }
 
             if (validID(dni)){
-                if (pass.length >= 5){
-                    val intent = Intent(this, MainActivity::class.java)
-                    intent.putExtra("dni", dni)
-                    startActivity(intent)
+                if (pass.length >= passwordLength){
+                    //añadir API de login
+
+                    val mbo: MiBancoOperacional? = MiBancoOperacional.getInstance(this)
+
+                    var clienteLogin = Cliente()
+
+                    clienteLogin.setNif(dni)
+                    clienteLogin.setClaveSeguridad(pass)
+
+                    //Comprobamos si e cliente existe en la BD
+
+                    val existClient = mbo?.login(clienteLogin) ?: -1
+
+                    if (existClient == -1){
+                        Toast.makeText(this, "El cliente no existe en la BD", Toast.LENGTH_LONG).show()
+                        binding.passwordField.error = getString(R.string.error_wrong_password)
+                    }else{
+                        val intent = Intent(this, MainActivity::class.java)
+                        intent.putExtra("dni", dni)
+                        startActivity(intent)
+                    }
                 }else{
                     binding.passwordField.error = getString(R.string.error_password_length)
                 }
@@ -115,7 +139,19 @@ class LoginActivity : AppCompatActivity() {
 
     fun validID(dni: String): Boolean{
 
-        if (dni.length != 9){
+        //Comprobación para DNI inventados con 8 digitos y una letra
+        val patron = Regex("^[0-9]{8}[A-Za-z]\$")
+
+        return patron.matches(dni)
+
+        /*
+        * COMPROBACIÓN DNI CON LETRA
+        *
+        * como en la API los DNI no son reales no podemos usar esta comprobación
+        *
+        *
+        * */
+        /*if (dni.length != 9){
             return false
         }
 
@@ -128,9 +164,9 @@ class LoginActivity : AppCompatActivity() {
 
         if (letter == calculatedLetter.toString().uppercase()){
             return true
-        }
+        }*/
 
-        return false
+        //return false
 
     }
 }
