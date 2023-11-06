@@ -114,11 +114,10 @@ class LoginActivity : AppCompatActivity() {
                     val existClient = mbo?.login(clienteLogin) ?: -1
 
                     if (existClient == -1){
-                        Toast.makeText(this, "El cliente no existe en la BD", Toast.LENGTH_LONG).show()
                         binding.passwordField.error = getString(R.string.error_wrong_password)
                     }else{
                         val intent = Intent(this, MainActivity::class.java)
-                        intent.putExtra("dni", dni)
+                        intent.putExtra("Cliente", existClient)
                         startActivity(intent)
                     }
                 }else{

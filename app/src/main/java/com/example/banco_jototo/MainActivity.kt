@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.banco_jototo.databinding.ActivityMainBinding
+import com.example.banco_jototo.pojo.Cliente
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,9 +18,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val dni = intent.getStringExtra("dni")
+        val cliente = intent.getSerializableExtra("Cliente") as Cliente
 
-        binding.viewDni.text = dni
+        binding.viewDni.text = cliente.getNombre()
 
         binding.btnTransactions.setOnClickListener {
             val intent = Intent(this, TransferActivity::class.java)
@@ -28,6 +29,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnChangePass.setOnClickListener {
             val intent = Intent(this, ChangePasswordActivity2::class.java)
+            intent.putExtra("Cliente", cliente)
             startActivity(intent)
         }
 

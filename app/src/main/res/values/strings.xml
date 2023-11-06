@@ -17,6 +17,7 @@
     <string name="text_btn_back">Back</string>
     <string name="error_confirm_pass">Password does not match</string>
     <string name="snackbar_pass_change">Updated password</string>
+    <string name="snackbar_pass_unchanged">Password has not been changed</string>
     <string name="helper_text_login_fields">Required</string>
     <string name="hint_field_login_pass">Password</string>
     <string name="hint_field_login_id">ID</string>
