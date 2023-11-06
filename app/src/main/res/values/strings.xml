@@ -43,6 +43,7 @@
     <string name="amount">Amount:</string>
     <string name="text_checked_receipt">Send a receipt</string>
     <string name="text_not_checked_receipt">Not send a receipt</string>
+    <string name="dcsImg">Icon image</string>
 
 
 </resources>
