@@ -27,7 +27,7 @@ class ChangePasswordActivity2 : AppCompatActivity() {
                 }else{
                     binding.newPasswordFieldTex.error = null
 
-                    if (password.length < 5){
+                    if (password.length < 4){
                         binding.newPasswordFieldTex.error = getString(R.string.error_password_length)
                     }else{
                         binding.newPasswordFieldTex.error = null
@@ -46,7 +46,7 @@ class ChangePasswordActivity2 : AppCompatActivity() {
                 }else{
                     binding.confirmPasswordFieldTex.error = null
 
-                    if (password.length < 5){
+                    if (password.length < 4){
                         binding.confirmPasswordFieldTex.error = getString(R.string.error_password_length)
                     }else{
                         binding.confirmPasswordFieldTex.error = null
@@ -76,14 +76,14 @@ class ChangePasswordActivity2 : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            if (newPass.length < 5){
+            if (newPass.length < 4){
                 binding.newPasswordFieldTex.error = getString(R.string.error_password_length)
                 return@setOnClickListener
             }else{
                 binding.newPasswordFieldTex.error = null
             }
 
-            if (confirmNewPass.length < 5){
+            if (confirmNewPass.length < 4){
                 binding.confirmPasswordFieldTex.error = getString(R.string.error_password_length)
                 return@setOnClickListener
             }else{

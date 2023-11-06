@@ -46,6 +46,7 @@
     <string name="dcsImg">Icon image</string>
     <string name="text_globPosition_title">Global Position</string>
     <string name="accounts">Accounts:</string>
+    <string name="text_movements_title">Movements</string>
 
 
 </resources>

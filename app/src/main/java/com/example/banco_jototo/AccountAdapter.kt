@@ -1,4 +1,4 @@
-package com.example.banco_jototo.pojo
+package com.example.banco_jototo
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.example.banco_jototo.R
 import com.example.banco_jototo.databinding.ItemAccountGbBinding
+import com.example.banco_jototo.pojo.Cuenta
 
 
 class AccountAdapter(private val accounts : List<Cuenta>):
@@ -21,13 +21,13 @@ class AccountAdapter(private val accounts : List<Cuenta>):
         //colocamos setListenner si hiciera falta
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AccountAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         context = parent.context
         val view = LayoutInflater.from(context).inflate(com.example.banco_jototo.R.layout.item_account_gb, parent,false)
         return ViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: AccountAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val account = accounts.get(position)
 
         with(holder){

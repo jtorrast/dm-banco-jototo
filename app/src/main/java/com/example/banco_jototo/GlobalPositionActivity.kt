@@ -5,8 +5,6 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.banco_jototo.bd.MiBancoOperacional
 import com.example.banco_jototo.databinding.ActivityGlobalPositionBinding
-import com.example.banco_jototo.databinding.ActivityTransferBinding
-import com.example.banco_jototo.pojo.AccountAdapter
 import com.example.banco_jototo.pojo.Cliente
 import com.example.banco_jototo.pojo.Cuenta
 

@@ -39,6 +39,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.btnTransactions.setOnClickListener {
+            val intent = Intent(this, MovementsActivity::class.java)
+            intent.putExtra("Cliente", cliente)
+            startActivity(intent)
+        }
+
         binding.btnExit.setOnClickListener {
             finishAffinity()
         }
