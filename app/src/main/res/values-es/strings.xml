@@ -43,5 +43,8 @@
     <string name="text_checked_receipt">Enviar justificante</string>
     <string name="text_not_checked_receipt">No enviar justificante</string>
     <string name="error_wrong_password">Contraseña incorrecta</string>
+    <string name="dcsImg">Imagen de incono</string>
+    <string name="text_globPosition_title">Posición Global</string>
+    <string name="accounts">Cuentas:</string>
 
 </resources>

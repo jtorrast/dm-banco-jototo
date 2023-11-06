@@ -44,6 +44,8 @@
     <string name="text_checked_receipt">Send a receipt</string>
     <string name="text_not_checked_receipt">Not send a receipt</string>
     <string name="dcsImg">Icon image</string>
+    <string name="text_globPosition_title">Global Position</string>
+    <string name="accounts">Accounts:</string>
 
 
 </resources>
