@@ -4,6 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GlobalPositionActivity">
+    tools:context=".GlobalPositionActivity"
+    android:background="@color/azul_oscuro_profundo">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rwAccounts"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        tools:listitem="@layout/item_account_gb"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

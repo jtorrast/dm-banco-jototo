@@ -4,7 +4,9 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.example.banco_jototo.R
 import com.example.banco_jototo.databinding.ItemAccountGbBinding
 
 
@@ -30,7 +32,15 @@ class AccountAdapter(private val accounts : List<Cuenta>):
 
         with(holder){
             //colcar listener si hace falta
-            binding.numAccountRV.text = account.getNumeroCuenta()
+            var numCuentaCompleto = " ${account.getBanco()} - ${account.getSucursal()} - ${account.getDc()} - ${account.getNumeroCuenta()} "
+            binding.numAccountRV.text = numCuentaCompleto
+
+            if (account.getSaldoActual()!! < 0){
+                binding.balanceRV.setTextColor(ContextCompat.getColor(context, R.color.red_error))
+
+            }else{
+                binding.balanceRV.setTextColor(ContextCompat.getColor(context, R.color.azul_electrico_palido))
+            }
             binding.balanceRV.text = account.getSaldoActual().toString()
         }
     }

@@ -33,6 +33,12 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.btnGlobalPosition.setOnClickListener {
+            val intent = Intent(this, GlobalPositionActivity::class.java)
+            intent.putExtra("Cliente", cliente)
+            startActivity(intent)
+        }
+
         binding.btnExit.setOnClickListener {
             finishAffinity()
         }
