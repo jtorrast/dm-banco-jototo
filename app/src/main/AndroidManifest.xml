@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Bancojototo"
         tools:targetApi="31">
         <activity
+            android:name=".MovementsActivity"
+            android:exported="false" />
+        <activity
             android:name=".GlobalPositionActivity"
             android:exported="false" />
         <activity
