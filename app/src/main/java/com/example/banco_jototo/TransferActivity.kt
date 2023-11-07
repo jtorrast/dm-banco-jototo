@@ -44,6 +44,7 @@ class TransferActivity : AppCompatActivity() {
 
         spinnerCurrency.adapter = adapterCurrency
 
+        //radio buttons
         binding.radioOwnAccount.setOnClickListener {
             binding.editElseAccount.visibility = View.INVISIBLE
             binding.spinnerReceiverOwnAccount.visibility = View.VISIBLE
