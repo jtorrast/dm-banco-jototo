@@ -7,6 +7,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.LinearLayout
 import android.widget.Spinner
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.banco_jototo.bd.MiBancoOperacional
 import com.example.banco_jototo.databinding.ActivityMovementsBinding
@@ -58,9 +59,11 @@ class MovementsActivity : AppCompatActivity(){
                 val context = binding.root.context
                 linearLayoutManager = LinearLayoutManager(context)
 
+
                 binding.rwMovements.apply {
                     layoutManager = linearLayoutManager
                     adapter = movementsAdapter
+
                 }
             }
 

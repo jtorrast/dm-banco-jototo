@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.banco_jototo.databinding.ItemAccountGbBinding
 import com.example.banco_jototo.databinding.ItemMovementsBinding
@@ -37,6 +38,12 @@ class MovementsAdapter (private val movements: ArrayList<Movimiento>):
             val formateador = SimpleDateFormat("dd/MM/yyyy")
             var dataInfo = "${formateador.format(movement.getFechaOperacion())} Importe ${movement.getImporte()}"
             binding.rwMovement.text = movement.getDescripcion()
+            if (movement.getImporte()!! < 0){
+                binding.rwDataAmount.setTextColor(ContextCompat.getColor(context, R.color.red_error))
+            }else{
+                binding.rwDataAmount.setTextColor(ContextCompat.getColor(context, R.color.azul_electrico_palido))
+            }
+
             binding.rwDataAmount.text = dataInfo
         }
     }
