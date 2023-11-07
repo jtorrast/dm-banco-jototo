@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.banco_jototo.databinding.ItemAccountGbBinding
+import com.example.banco_jototo.databinding.ItemMovementsBinding
 import com.example.banco_jototo.pojo.Movimiento
+import java.text.SimpleDateFormat
 
 class MovementsAdapter (private val movements: ArrayList<Movimiento>):
         RecyclerView.Adapter<MovementsAdapter.ViewHolder>(){
@@ -14,7 +16,7 @@ class MovementsAdapter (private val movements: ArrayList<Movimiento>):
             private lateinit var context: Context
 
             inner class ViewHolder(view: View): RecyclerView.ViewHolder(view){
-                val binding = ItemAccountGbBinding.bind(view)
+                val binding = ItemMovementsBinding.bind(view)
 
                 //colocamos setListenner si hiciera falta
 
@@ -22,7 +24,7 @@ class MovementsAdapter (private val movements: ArrayList<Movimiento>):
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         context = parent.context
-        val view = LayoutInflater.from(context).inflate(R.layout.item_account_gb, parent, false)
+        val view = LayoutInflater.from(context).inflate(R.layout.item_movements, parent, false)
         return ViewHolder(view)
     }
 
@@ -32,8 +34,10 @@ class MovementsAdapter (private val movements: ArrayList<Movimiento>):
         var movement = movements.get(position)
 
         with(holder){
-            binding.numAccountRV.text = movement.getDescripcion()
-            binding.balanceRV.text = movement.getImporte().toString()
+            val formateador = SimpleDateFormat("dd/MM/yyyy")
+            var dataInfo = "${formateador.format(movement.getFechaOperacion())} Importe ${movement.getImporte()}"
+            binding.rwMovement.text = movement.getDescripcion()
+            binding.rwDataAmount.text = dataInfo
         }
     }
 

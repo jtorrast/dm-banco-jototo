@@ -96,9 +96,9 @@
             app:icon="@drawable/ic_global_position" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnTransactions"
+            android:id="@+id/btnMovements"
             style="@style/btnMainMenu"
-            android:text="@string/text_btnTransactions"
+            android:text="@string/text_btnMovements"
             app:icon="@drawable/ic_transactions" />
 
         <com.google.android.material.button.MaterialButton

@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.viewDni.text = cliente.getNombre()
 
-        binding.btnTransactions.setOnClickListener {
+        binding.btnTransfers.setOnClickListener {
             val intent = Intent(this, TransferActivity::class.java)
             startActivity(intent)
         }
@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        binding.btnTransactions.setOnClickListener {
+        binding.btnMovements.setOnClickListener {
             val intent = Intent(this, MovementsActivity::class.java)
             intent.putExtra("Cliente", cliente)
             startActivity(intent)

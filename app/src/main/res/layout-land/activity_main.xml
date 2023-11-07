@@ -108,12 +108,12 @@
                    app:icon="@drawable/ic_global_position"
                    />
                <com.google.android.material.button.MaterialButton
-                   android:id="@+id/btnTransactions"
+                   android:id="@+id/btnMovements"
                    android:layout_width="0dp"
                    android:layout_height="wrap_content"
                    android:layout_weight="1"
                    style="@style/btnMainMenuLandscape"
-                   android:text="@string/text_btnTransactions"
+                   android:text="@string/text_btnMovements"
                    app:icon="@drawable/ic_transactions"
                    android:layout_marginStart="8dp"/>
                <com.google.android.material.button.MaterialButton

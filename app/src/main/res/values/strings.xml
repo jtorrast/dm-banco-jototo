@@ -48,6 +48,7 @@
     <string name="accounts">Accounts:</string>
     <string name="text_movements_title">Movements</string>
     <string name="caption_last_movements">Last movements:</string>
+    <string name="text_btnMovements">Movements</string>
 
 
 </resources>
