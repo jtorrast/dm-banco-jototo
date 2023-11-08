@@ -1,4 +1,4 @@
-package com.example.banco_jototo
+package com.example.banco_jototo.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.example.banco_jototo.R
 import com.example.banco_jototo.databinding.ItemAccountGbBinding
 import com.example.banco_jototo.pojo.Cuenta
 
@@ -23,7 +24,7 @@ class AccountAdapter(private val accounts : List<Cuenta>):
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         context = parent.context
-        val view = LayoutInflater.from(context).inflate(com.example.banco_jototo.R.layout.item_account_gb, parent,false)
+        val view = LayoutInflater.from(context).inflate(R.layout.item_account_gb, parent,false)
         return ViewHolder(view)
     }
 
@@ -39,7 +40,9 @@ class AccountAdapter(private val accounts : List<Cuenta>):
                 binding.balanceRV.setTextColor(ContextCompat.getColor(context, R.color.red_error))
 
             }else{
-                binding.balanceRV.setTextColor(ContextCompat.getColor(context, R.color.azul_electrico_palido))
+                binding.balanceRV.setTextColor(ContextCompat.getColor(context,
+                    R.color.azul_electrico_palido
+                ))
             }
             binding.balanceRV.text = account.getSaldoActual().toString()
         }

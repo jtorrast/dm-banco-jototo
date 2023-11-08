@@ -1,8 +1,9 @@
-package com.example.banco_jototo
+package com.example.banco_jototo.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.example.banco_jototo.R
 import com.example.banco_jototo.bd.MiBancoOperacional
 import com.example.banco_jototo.databinding.ActivityChangePassword2Binding
 import com.example.banco_jototo.pojo.Cliente

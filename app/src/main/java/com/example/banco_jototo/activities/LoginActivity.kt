@@ -1,20 +1,13 @@
-package com.example.banco_jototo
+package com.example.banco_jototo.activities
 
 import android.content.Intent
-import android.content.res.ColorStateList
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.view.View
-import android.widget.EditText
-import android.widget.Toast
+import com.example.banco_jototo.R
 import com.example.banco_jototo.bd.MiBancoOperacional
 import com.example.banco_jototo.databinding.ActivityLoginBinding
-import com.example.banco_jototo.databinding.ActivityMainBinding
 import com.example.banco_jototo.pojo.Cliente
-import com.google.android.material.snackbar.Snackbar
 
 class LoginActivity : AppCompatActivity() {
 

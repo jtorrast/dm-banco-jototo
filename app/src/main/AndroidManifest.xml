@@ -13,22 +13,22 @@
         android:theme="@style/Theme.Bancojototo"
         tools:targetApi="31">
         <activity
-            android:name=".MovementsActivity"
+            android:name=".activities.MovementsActivity"
             android:exported="false" />
         <activity
-            android:name=".GlobalPositionActivity"
+            android:name=".activities.GlobalPositionActivity"
             android:exported="false" />
         <activity
-            android:name=".TransferActivity"
+            android:name=".activities.TransferActivity"
             android:exported="false" />
         <activity
-            android:name=".ChangePasswordActivity2"
+            android:name=".activities.ChangePasswordActivity2"
             android:exported="false" />
         <activity
-            android:name=".LottieActivity"
+            android:name=".activities.LottieActivity"
             android:exported="false" />
         <activity
-            android:name=".WelcomeActivity"
+            android:name=".activities.WelcomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,10 +37,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".activities.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:exported="false" />
     </application>
 

@@ -1,10 +1,10 @@
-package com.example.banco_jototo
+package com.example.banco_jototo.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ArrayAdapter
-import androidx.core.content.ContextCompat
+import com.example.banco_jototo.R
 import com.example.banco_jototo.databinding.ActivityTransferBinding
 import com.google.android.material.snackbar.Snackbar
 

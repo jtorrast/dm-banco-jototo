@@ -1,20 +1,18 @@
-package com.example.banco_jototo
+package com.example.banco_jototo.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.LinearLayout
-import android.widget.Spinner
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.banco_jototo.R
+import com.example.banco_jototo.adapters.MovementsAdapter
 import com.example.banco_jototo.bd.MiBancoOperacional
 import com.example.banco_jototo.databinding.ActivityMovementsBinding
 import com.example.banco_jototo.pojo.Cliente
 import com.example.banco_jototo.pojo.Cuenta
 import com.example.banco_jototo.pojo.Movimiento
-import com.google.android.material.snackbar.Snackbar
 
 class MovementsActivity : AppCompatActivity(){
     private lateinit var movementsAdapter: MovementsAdapter
