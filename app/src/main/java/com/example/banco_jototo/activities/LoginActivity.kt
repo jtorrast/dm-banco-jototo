@@ -110,9 +110,9 @@ class LoginActivity : AppCompatActivity() {
                         binding.passwordField.error = getString(R.string.error_wrong_password)
                     }else{
                         /*Descomentar cuando funcione la animación*/
-                        //val intent = Intent(this, LottieActivity::class.java)
+                        val intent = Intent(this, LottieActivity::class.java)
                         /*Comentar cuando funcione la animación*/
-                        val intent = Intent(this, MainActivity::class.java)
+                        //val intent = Intent(this, MainActivity::class.java)
                         intent.putExtra("Cliente", existClient)
                         startActivity(intent)
                     }
