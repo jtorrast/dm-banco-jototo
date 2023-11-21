@@ -1,4 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.fragment.app.FragmentContainerView
+        class="com.example.banco_jototo.fragments.AccountsFragment"
+        android:id="@+id/frgCuentas"
+        android:layout_weight="30"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_accounts" />
+    <androidx.fragment.app.FragmentContainerView
+        class="com.example.banco_jototo.fragments.AccountsMovementsFragment"
+        android:id="@+id/frgMovimiento"
+        android:layout_weight="70"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_accounts_movements" />
+</LinearLayout>
+
+<!--
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -38,3 +61,4 @@
         app:layout_constraintStart_toStartOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+-->

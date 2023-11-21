@@ -1,5 +1,6 @@
 package com.example.banco_jototo.adapters
 
+import android.accounts.Account
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +12,7 @@ import com.example.banco_jototo.databinding.ItemAccountGbBinding
 import com.example.banco_jototo.pojo.Cuenta
 
 
-class AccountAdapter(private val accounts : List<Cuenta>):
+class AccountAdapter(private val accounts : List<Cuenta>, private val listener: OnClickListener):
     RecyclerView.Adapter<AccountAdapter.ViewHolder>(){
 
     private lateinit var context: Context
@@ -20,6 +21,11 @@ class AccountAdapter(private val accounts : List<Cuenta>):
         val binding = ItemAccountGbBinding.bind(view)
 
         //colocamos setListenner si hiciera falta
+        fun setListener(cuenta: Cuenta){
+            binding.root.setOnClickListener {
+                listener.onClick(cuenta)
+            }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -33,6 +39,7 @@ class AccountAdapter(private val accounts : List<Cuenta>):
 
         with(holder){
             //colcar listener si hace falta
+            setListener(account)
             var numCuentaCompleto = " ${account.getBanco()} - ${account.getSucursal()} - ${account.getDc()} - ${account.getNumeroCuenta()} "
             binding.numAccountRV.text = numCuentaCompleto
 

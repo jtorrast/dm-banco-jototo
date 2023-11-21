@@ -6,4 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".activities.GlobalPositionDetailsActivity">
 
+
+    <fragment
+        class="com.example.banco_jototo.fragments.AccountsMovementsFragment"
+        android:id="@+id/frgMovimiento"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_accounts_movements"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

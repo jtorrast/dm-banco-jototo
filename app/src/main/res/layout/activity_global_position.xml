@@ -7,6 +7,17 @@
     tools:context=".activities.GlobalPositionActivity"
     android:background="@color/azul_oscuro_profundo">
 
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/frgCuentas"
+        class="com.example.banco_jototo.fragments.AccountsFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout="@layout/fragment_accounts"/>
+
+<!--
     <TextView
         android:id="@+id/globalTitle"
         style="@style/titleSectionStyle"
@@ -36,5 +47,6 @@
         app:layout_constraintTop_toBottomOf="@+id/accounts"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
+-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
