@@ -49,8 +49,9 @@ class AccountsFragment : Fragment(), OnClickListener {
         // Inflate the layout for this fragment
         binding = FragmentAccountsBinding.inflate(inflater, container, false)
         val mbo: MiBancoOperacional? = MiBancoOperacional.getInstance(context)
-
         val listaCuentas: List<Cuenta>? = mbo?.getCuentas(cliente as Cliente) as List<Cuenta>?
+
+
 
         accountsAdapter = AccountAdapter(listaCuentas!!, this)
         linearLayoutManager = LinearLayoutManager(context)
