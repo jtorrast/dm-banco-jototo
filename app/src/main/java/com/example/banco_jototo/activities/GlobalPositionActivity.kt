@@ -19,7 +19,7 @@ import com.example.banco_jototo.pojo.Cliente
 import com.example.banco_jototo.pojo.Cuenta
 import com.example.banco_jototo.pojo.Movimiento
 
-class GlobalPositionActivity : AppCompatActivity(), OnClickListener {
+class GlobalPositionActivity : AppCompatActivity(), AccountsListener {
 
     private lateinit var binding: ActivityGlobalPositionBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,7 +43,7 @@ class GlobalPositionActivity : AppCompatActivity(), OnClickListener {
         frgAccounts.setListener(this)
 
     }
-    override fun onClick(obj: Any) {
+    /*override fun onClick(obj: Any) {
         val frgMovements = AccountsMovementsFragment.newInstance(obj as Cuenta)
 
 
@@ -64,6 +64,28 @@ class GlobalPositionActivity : AppCompatActivity(), OnClickListener {
             startActivity(intent)
         }
 
+    }*/
+
+    override fun onCuentaSeleccionada(cuenta: Cuenta) {
+        val frgMovements = AccountsMovementsFragment.newInstance(cuenta)
+
+
+        Log.i("Configuración de pantalla", "Valor de screenLayout: ${resources.configuration.screenLayout}")
+
+        //el valor 268435796 equivale a la pantalla de la tablet
+        if (resources.configuration.screenLayout == 268435796){
+            Log.i("Dispositivo", "tablet")
+
+            //tablet
+            supportFragmentManager.beginTransaction().
+            replace(R.id.frgMovimiento, frgMovements).commit()
+
+        }else{
+            //Pantalla movil, cambiamos actividad
+            val intent = Intent(this, GlobalPositionDetailsActivity::class.java)
+            intent.putExtra("Cuenta", cuenta)
+            startActivity(intent)
+        }
     }
 
 }

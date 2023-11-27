@@ -27,7 +27,7 @@ class AccountsFragment: Fragment(), OnClickListener {
     private lateinit var itemDecoration: DividerItemDecoration
 
     private lateinit var cliente: Cliente
-    private lateinit var listener: OnClickListener
+    private lateinit var listener: AccountsListener
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,12 +63,14 @@ class AccountsFragment: Fragment(), OnClickListener {
         //return inflater.inflate(R.layout.fragment_accounts, container, false)
     }
 
-    override fun onClick(obj: Any) {
-        Log.e("Cuenta Fragment", obj.toString())
-        listener.onClick(obj)
+
+    override fun onClick(cuenta: Cuenta) {
+        if (listener != null) {
+            listener.onCuentaSeleccionada(cuenta)
+        }
     }
 
-    fun setListener(listener: OnClickListener){
+    fun setListener(listener: AccountsListener){
         this.listener = listener
     }
 
@@ -83,6 +85,7 @@ class AccountsFragment: Fragment(), OnClickListener {
                 }
             }
     }
+
 
 
 }
