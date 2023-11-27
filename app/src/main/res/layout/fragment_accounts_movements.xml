@@ -6,6 +6,22 @@
     android:orientation="vertical"
     tools:context=".fragments.AccountsMovementsFragment">
 
+    <TextView
+        android:id="@+id/titleMoventsSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_movements_title"
+        style="@style/titleSectionStyle"/>
+
+    <TextView
+        android:id="@+id/textMovementsSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/caption_last_movements"
+        android:textColor="@color/white"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"/>
+
     <!-- TODO: Update blank fragment layout -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerIdMovements"
