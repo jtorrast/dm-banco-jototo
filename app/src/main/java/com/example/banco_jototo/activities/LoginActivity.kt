@@ -67,8 +67,14 @@ class LoginActivity : AppCompatActivity() {
 
         binding.btnLogin.setOnClickListener {
 
-            val dni = binding.idEditText.text.toString().trim().uppercase()
-            val pass = binding.passwordEditField.text.toString().trim()
+            /*COMENTAR PARA PRUEBAS*/
+            //val dni = binding.idEditText.text.toString().trim().uppercase()
+            //val pass = binding.passwordEditField.text.toString().trim()
+
+            /*DESCOMENTAR PARA PRUEBAS*/
+            val dni = "11111111A"
+            val pass = "1234"
+
             var emptyfields = false
             var validFields = false
 
@@ -109,10 +115,10 @@ class LoginActivity : AppCompatActivity() {
                     if (existClient == -1){
                         binding.passwordField.error = getString(R.string.error_wrong_password)
                     }else{
-                        /*Descomentar cuando funcione la animación*/
-                        val intent = Intent(this, LottieActivity::class.java)
-                        /*Comentar cuando funcione la animación*/
-                        //val intent = Intent(this, MainActivity::class.java)
+                        /*Descomentar para entrear en la animación*/
+                        //val intent = Intent(this, LottieActivity::class.java)
+                        /*Comentar para saltar la animación*/
+                        val intent = Intent(this, MainActivity::class.java)
                         intent.putExtra("Cliente", existClient)
                         startActivity(intent)
                     }

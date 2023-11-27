@@ -4,13 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.GlobalPositionDetailsActivity">
+    tools:context=".activities.GlobalPositionDetailsActivity"
+    android:background="@color/azul_oscuro_profundo">
 
 
-    <fragment
-        class="com.example.banco_jototo.fragments.AccountsMovementsFragment"
+    <androidx.fragment.app.FragmentContainerView
         android:id="@+id/frgMovimiento"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout="@layout/fragment_accounts_movements"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

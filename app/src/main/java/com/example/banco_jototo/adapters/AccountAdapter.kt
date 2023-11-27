@@ -9,6 +9,7 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.banco_jototo.R
 import com.example.banco_jototo.databinding.ItemAccountGbBinding
+import com.example.banco_jototo.fragments.AccountsListener
 import com.example.banco_jototo.pojo.Cuenta
 
 
@@ -20,7 +21,6 @@ class AccountAdapter(private val accounts : List<Cuenta>, private val listener: 
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view){
         val binding = ItemAccountGbBinding.bind(view)
 
-        //colocamos setListenner si hiciera falta
         fun setListener(cuenta: Cuenta){
             binding.root.setOnClickListener {
                 listener.onClick(cuenta)

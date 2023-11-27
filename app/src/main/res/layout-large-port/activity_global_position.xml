@@ -6,19 +6,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <androidx.fragment.app.FragmentContainerView
-        class="com.example.banco_jototo.fragments.AccountsFragment"
         android:id="@+id/frgCuentas"
         android:layout_weight="30"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        tools:layout="@layout/fragment_accounts" />
+        android:layout_height="0dp"/>
     <androidx.fragment.app.FragmentContainerView
-        class="com.example.banco_jototo.fragments.AccountsMovementsFragment"
         android:id="@+id/frgMovimiento"
         android:layout_weight="70"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        tools:layout="@layout/fragment_accounts_movements" />
+        android:layout_height="0dp"/>
 </LinearLayout>
 
 
