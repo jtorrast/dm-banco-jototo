@@ -7,6 +7,15 @@
     tools:context=".activities.GlobalPositionActivity"
     android:background="@color/azul_oscuro_profundo">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_globPosition_title"
+        style="@style/titleSectionStyle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/frgCuentas"
         android:layout_width="match_parent"
