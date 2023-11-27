@@ -44,8 +44,7 @@
         tools:text="Fecha y saldo"
         android:textColor="@color/white"
         app:layout_constraintStart_toEndOf="@id/rwIcon"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rwMovement"
         />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

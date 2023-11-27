@@ -27,11 +27,6 @@ class GlobalPositionActivity : AppCompatActivity(), OnClickListener {
         binding = ActivityGlobalPositionBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        /*Recuperamos la lista de cuentas y la pasamos al adaptaer*/
-        //val mbo: MiBancoOperacional? = MiBancoOperacional.getInstance(this)
-        /*val cliente = intent.getSerializableExtra("Cliente") as Cliente
-        val listaCuentas: List<Cuenta> = mbo?.getCuentas(cliente) as List<Cuenta>*/
-
         /*Recuperamos el cliente*/
         val cliente = intent.getSerializableExtra("Cliente") as Cliente
         Log.e("CLIENTE GLOBAL POSITION", cliente.getNombre()!!)
@@ -51,48 +46,24 @@ class GlobalPositionActivity : AppCompatActivity(), OnClickListener {
     override fun onClick(obj: Any) {
         val frgMovements = AccountsMovementsFragment.newInstance(obj as Cuenta)
 
-        if (resources.configuration.screenLayout == Configuration.SCREENLAYOUT_SIZE_XLARGE){
+
+        Log.i("Configuración de pantalla", "Valor de screenLayout: ${resources.configuration.screenLayout}")
+
+        //el valor 268435796 equivale a la pantalla de la tablet
+        if (resources.configuration.screenLayout == 268435796){
             Log.i("Dispositivo", "tablet")
+
             //tablet
                 supportFragmentManager.beginTransaction().
-                add(R.id.frgMovimiento, frgMovements).commit()
-           /* if (resources.configuration.orientation == Configuration.ORIENTATION_LANDSCAPE) {
-                //horizontal
-            }else{
-
-            }*/
+                replace(R.id.frgMovimiento, frgMovements).commit()
 
         }else{
-            //cambiamos actividad
+            //Pantalla movil, cambiamos actividad
             val intent = Intent(this, GlobalPositionDetailsActivity::class.java)
             intent.putExtra("Cuenta", obj as Cuenta)
-
             startActivity(intent)
         }
 
     }
-
-   /* override fun onCuentaSeleccionada(cuenta: Cuenta) {
-
-        Log.e("Global Position ", cuenta.getSaldoActual().toString())
-
-       if (cuenta != null) {
-            var hayDetalle = supportFragmentManager.findFragmentById(R.id.frgMovimiento) != null
-
-            if (hayDetalle) {
-                var movementsFragment: AccountsMovementsFragment = AccountsMovementsFragment.newInstance(cuenta as Cuenta)
-                var transaction = supportFragmentManager.beginTransaction()
-                transaction.replace(R.id.frgMovimiento, movementsFragment)
-                transaction.commitNow()
-
-
-            }else{
-                val intent = Intent(this, GlobalPositionDetailsActivity::class.java)
-                intent.putExtra("cuenta", cuenta)
-                startActivity(intent)
-            }
-        }
-    }*/
-
 
 }
