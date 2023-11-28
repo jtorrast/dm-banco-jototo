@@ -49,5 +49,7 @@
     <string name="text_movements_title">Movimientos</string>
     <string name="caption_last_movements">"Últimos movimientos: "</string>
     <string name="text_btnMovements">Movimientos</string>
+    <string name="accept">Aceptar</string>
+    <string name="dialogTitleMovements">Detalle del movimiento:</string>
 
 </resources>
