@@ -11,7 +11,7 @@ import com.example.banco_jototo.databinding.ItemMovementsBinding
 import com.example.banco_jototo.pojo.Movimiento
 import java.text.SimpleDateFormat
 
-class MovementsAdapter (private val movements: ArrayList<Movimiento>):
+class MovementsAdapter(private val movements: ArrayList<Movimiento>, private val listener: OnClickListenerMovements? = null):
         RecyclerView.Adapter<MovementsAdapter.ViewHolder>(){
 
             private lateinit var context: Context
@@ -20,6 +20,11 @@ class MovementsAdapter (private val movements: ArrayList<Movimiento>):
                 val binding = ItemMovementsBinding.bind(view)
 
                 //colocamos setListenner si hiciera falta
+                fun setListener(movimiento: Movimiento){
+                    binding.root.setOnClickListener {
+                        listener?.onClick(movimiento)
+                    }
+                }
 
             }
 
@@ -35,6 +40,7 @@ class MovementsAdapter (private val movements: ArrayList<Movimiento>):
         var movement = movements.get(position)
 
         with(holder){
+            setListener(movement)
             val formateador = SimpleDateFormat("dd/MM/yyyy")
             var dataInfo = "${formateador.format(movement.getFechaOperacion())} Importe ${movement.getImporte()}"
             binding.rwMovement.text = movement.getDescripcion()

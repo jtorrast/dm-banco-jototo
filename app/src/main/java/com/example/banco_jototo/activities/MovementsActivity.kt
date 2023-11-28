@@ -8,8 +8,10 @@ import android.widget.ArrayAdapter
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.banco_jototo.R
 import com.example.banco_jototo.adapters.MovementsAdapter
+import com.example.banco_jototo.adapters.OnClickListenerMovements
 import com.example.banco_jototo.bd.MiBancoOperacional
 import com.example.banco_jototo.databinding.ActivityMovementsBinding
+import com.example.banco_jototo.fragments.MovementsListener
 import com.example.banco_jototo.pojo.Cliente
 import com.example.banco_jototo.pojo.Cuenta
 import com.example.banco_jototo.pojo.Movimiento
@@ -18,6 +20,7 @@ class MovementsActivity : AppCompatActivity(){
     private lateinit var movementsAdapter: MovementsAdapter
     private lateinit var linearLayoutManager: LinearLayoutManager
     private lateinit var binding: ActivityMovementsBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -53,8 +56,8 @@ class MovementsActivity : AppCompatActivity(){
 
                 var listaMovimientos: ArrayList<Movimiento> = mbo?.getMovimientos(accountList.get(position)) as ArrayList<Movimiento>
 
-                movementsAdapter = MovementsAdapter(listaMovimientos)
                 val context = binding.root.context
+                movementsAdapter = MovementsAdapter(listaMovimientos)
                 linearLayoutManager = LinearLayoutManager(context)
 
 
@@ -70,6 +73,7 @@ class MovementsActivity : AppCompatActivity(){
             }
         }
     }
+
 
 
 }

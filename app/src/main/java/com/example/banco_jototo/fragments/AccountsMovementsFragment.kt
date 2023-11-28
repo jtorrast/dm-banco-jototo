@@ -1,16 +1,16 @@
 package com.example.banco_jototo.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.banco_jototo.R
 import com.example.banco_jototo.adapters.MovementsAdapter
+import com.example.banco_jototo.adapters.OnClickListenerMovements
 import com.example.banco_jototo.bd.MiBancoOperacional
-import com.example.banco_jototo.databinding.FragmentAccountsBinding
 import com.example.banco_jototo.databinding.FragmentAccountsMovementsBinding
 import com.example.banco_jototo.pojo.Cuenta
 import com.example.banco_jototo.pojo.Movimiento
@@ -25,7 +25,7 @@ private const val ARG_CUENTA = "cuenta"
  * Use the [AccountsMovementsFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class AccountsMovementsFragment : Fragment() { //faltara implements listener
+class AccountsMovementsFragment : Fragment(), OnClickListenerMovements {
     // TODO: Rename and change types of parameters
     private lateinit var binding: FragmentAccountsMovementsBinding
     private lateinit var movementsAdapter: MovementsAdapter
@@ -33,7 +33,7 @@ class AccountsMovementsFragment : Fragment() { //faltara implements listener
     private lateinit var itemDecoration: DividerItemDecoration
 
     private lateinit var cuenta: Cuenta
-    //faltara añadir la instanacia al listener correspodiente que tengamos que pasar
+    private lateinit var listener: MovementsListener
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,7 +51,7 @@ class AccountsMovementsFragment : Fragment() { //faltara implements listener
         val mbo: MiBancoOperacional? = MiBancoOperacional.getInstance(context)
         if (mbo != null){
             var movementsList: ArrayList<Movimiento> = mbo.getMovimientos(cuenta) as ArrayList<Movimiento>
-            movementsAdapter = MovementsAdapter(movementsList)
+            movementsAdapter = MovementsAdapter(movementsList, this)
             linearLayoutManager = LinearLayoutManager(context)
             itemDecoration = DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
 
@@ -65,16 +65,6 @@ class AccountsMovementsFragment : Fragment() { //faltara implements listener
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment AccountsMovementsFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
         fun newInstance(cuenta: Cuenta) =
             AccountsMovementsFragment().apply {
                 arguments = Bundle().apply {
@@ -82,4 +72,15 @@ class AccountsMovementsFragment : Fragment() { //faltara implements listener
                 }
             }
     }
+    fun setListener(listener: MovementsListener){
+        this.listener = listener
+    }
+
+    override fun onClick(movimiento: Movimiento) {
+        Log.i("Accounts Movements", movimiento.getDescripcion().toString())
+        if (listener != null) {
+            listener.onMovimientoSeleccionado(movimiento)
+        }
+    }
+
 }

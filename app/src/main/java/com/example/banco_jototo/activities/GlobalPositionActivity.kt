@@ -15,11 +15,12 @@ import com.example.banco_jototo.databinding.ActivityGlobalPositionBinding
 import com.example.banco_jototo.fragments.AccountsFragment
 import com.example.banco_jototo.fragments.AccountsListener
 import com.example.banco_jototo.fragments.AccountsMovementsFragment
+import com.example.banco_jototo.fragments.MovementsListener
 import com.example.banco_jototo.pojo.Cliente
 import com.example.banco_jototo.pojo.Cuenta
 import com.example.banco_jototo.pojo.Movimiento
 
-class GlobalPositionActivity : AppCompatActivity(), AccountsListener {
+class GlobalPositionActivity : AppCompatActivity(), AccountsListener, MovementsListener {
 
     private lateinit var binding: ActivityGlobalPositionBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -75,6 +76,7 @@ class GlobalPositionActivity : AppCompatActivity(), AccountsListener {
         //el valor 268435796 equivale a la pantalla de la tablet
         if (resources.configuration.screenLayout == 268435796){
             Log.i("Dispositivo", "tablet")
+            frgMovements.setListener(this)
 
             //tablet
             supportFragmentManager.beginTransaction().
@@ -86,6 +88,10 @@ class GlobalPositionActivity : AppCompatActivity(), AccountsListener {
             intent.putExtra("Cuenta", cuenta)
             startActivity(intent)
         }
+    }
+
+    override fun onMovimientoSeleccionado(movimiento: Movimiento) {
+        Log.i("Global Position", movimiento.getDescripcion().toString())
     }
 
 }
