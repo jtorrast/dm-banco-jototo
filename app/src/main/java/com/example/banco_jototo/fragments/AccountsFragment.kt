@@ -24,7 +24,6 @@ class AccountsFragment: Fragment(), OnClickListener {
     private lateinit var binding: FragmentAccountsBinding
     private lateinit var accountsAdapter: AccountAdapter
     private lateinit var linearLayoutManager: LinearLayoutManager
-    private lateinit var itemDecoration: DividerItemDecoration
 
     private lateinit var cliente: Cliente
     private lateinit var listener: AccountsListener
@@ -52,12 +51,12 @@ class AccountsFragment: Fragment(), OnClickListener {
         }
 
         linearLayoutManager = LinearLayoutManager(context)
-        itemDecoration = DividerItemDecoration(context, DividerItemDecoration.VERTICAL)
+
 
         binding.recyclerIdAccounts.apply {
             layoutManager = linearLayoutManager
             adapter = accountsAdapter
-            addItemDecoration(itemDecoration)
+
         }
         return binding.root
         //return inflater.inflate(R.layout.fragment_accounts, container, false)
