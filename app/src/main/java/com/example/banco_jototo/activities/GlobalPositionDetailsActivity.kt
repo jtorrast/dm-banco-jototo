@@ -36,28 +36,20 @@ class GlobalPositionDetailsActivity : AppCompatActivity(), MovementsListener {
         binding.bottomNavigation.setOnNavigationItemSelectedListener {
             when(it.itemId){
                 R.id.navigation_all->{
-                    Log.i("Bottom Navigation", "Todos los movimientos")
-
                     replaceFragment(AccountsMovementsFragment.newInstance(cuentaCliente), this)
-
                     true
                 }
                 R.id.navigation_type0->{
-                    Log.i("Bottom Navigation", "Todos TIPO 0")
                     tipo = 0
                     replaceFragment(AccountsMovementsFragment.newInstance(cuentaCliente, tipo),this)
-
                     true
                 }
                 R.id.navigation_type1->{
-                    Log.i("Bottom Navigation", "Todos TIPO 1")
                     tipo = 1
                     replaceFragment(AccountsMovementsFragment.newInstance(cuentaCliente, tipo), this)
-
                     true
                 }
                 R.id.navigation_type2->{
-                    Log.i("Bottom Navigation", "Todos TIPO 2")
                     tipo = 2
                     replaceFragment(AccountsMovementsFragment.newInstance(cuentaCliente, tipo), this)
                     true
@@ -73,12 +65,12 @@ class GlobalPositionDetailsActivity : AppCompatActivity(), MovementsListener {
         supportFragmentManager.beginTransaction()
             .replace(R.id.frgMovimiento, fragment)
             .commit()
-        fragment.setListener(this)
+        fragment.setListener(listener)
 
     }
 
     override fun onMovimientoSeleccionado(movimiento: Movimiento) {
-        Log.i("Details Activity", movimiento.getDescripcion().toString())
+        //Log.i("Details Activity", movimiento.getDescripcion().toString())
         val dialogView = layoutInflater.inflate(R.layout.dialog_movement, null)
 
         val formateador = SimpleDateFormat("dd/MM/yyyy")
