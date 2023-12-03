@@ -28,7 +28,7 @@ class GlobalPositionDetailsActivity : AppCompatActivity(), MovementsListener {
         val cuentaCliente = intent.getSerializableExtra("Cuenta")
 
 
-        var frgMovents = AccountsMovementsFragment.newInstance(cuentaCliente as Cuenta, tipo)
+        var frgMovents = AccountsMovementsFragment.newInstance(cuentaCliente as Cuenta)
 
         supportFragmentManager.beginTransaction()
             .add(R.id.frgMovimiento, frgMovents).commit()
@@ -37,25 +37,29 @@ class GlobalPositionDetailsActivity : AppCompatActivity(), MovementsListener {
             when(it.itemId){
                 R.id.navigation_all->{
                     Log.i("Bottom Navigation", "Todos los movimientos")
-                    replaceFragment(frgMovents)
+
+                    replaceFragment(AccountsMovementsFragment.newInstance(cuentaCliente), this)
+
                     true
                 }
                 R.id.navigation_type0->{
                     Log.i("Bottom Navigation", "Todos TIPO 0")
                     tipo = 0
-                    replaceFragment(AccountsMovementsFragment.newInstance(cuentaCliente, tipo))
+                    replaceFragment(AccountsMovementsFragment.newInstance(cuentaCliente, tipo),this)
+
                     true
                 }
                 R.id.navigation_type1->{
                     Log.i("Bottom Navigation", "Todos TIPO 1")
                     tipo = 1
-                    replaceFragment(AccountsMovementsFragment.newInstance(cuentaCliente, tipo))
+                    replaceFragment(AccountsMovementsFragment.newInstance(cuentaCliente, tipo), this)
+
                     true
                 }
                 R.id.navigation_type2->{
                     Log.i("Bottom Navigation", "Todos TIPO 2")
                     tipo = 2
-                    replaceFragment(AccountsMovementsFragment.newInstance(cuentaCliente, tipo))
+                    replaceFragment(AccountsMovementsFragment.newInstance(cuentaCliente, tipo), this)
                     true
                 }
 
@@ -65,10 +69,12 @@ class GlobalPositionDetailsActivity : AppCompatActivity(), MovementsListener {
         frgMovents.setListener(this)
     }
 
-    private fun replaceFragment(fragment: Fragment) {
+    private fun replaceFragment(fragment: AccountsMovementsFragment, listener: MovementsListener) {
         supportFragmentManager.beginTransaction()
             .replace(R.id.frgMovimiento, fragment)
             .commit()
+        fragment.setListener(this)
+
     }
 
     override fun onMovimientoSeleccionado(movimiento: Movimiento) {

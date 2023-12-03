@@ -41,7 +41,7 @@ class AccountsMovementsFragment : Fragment(), OnClickListenerMovements {
         super.onCreate(savedInstanceState)
         arguments?.let {
             cuenta = it.getSerializable(ARG_CUENTA) as Cuenta
-            tipo = it.getSerializable(ARG_TIPO) as Int
+            tipo = it.getSerializable(ARG_TIPO) as? Int
         }
     }
 
