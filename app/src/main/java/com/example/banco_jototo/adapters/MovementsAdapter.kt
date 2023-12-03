@@ -17,7 +17,6 @@ class MovementsAdapter(private val movements: ArrayList<Movimiento>, private val
             inner class ViewHolder(view: View): RecyclerView.ViewHolder(view){
                 val binding = ItemMovementsBinding.bind(view)
 
-                //colocamos setListenner si hiciera falta
                 fun setListener(movimiento: Movimiento){
                     binding.root.setOnClickListener {
                         listener?.onClick(movimiento)

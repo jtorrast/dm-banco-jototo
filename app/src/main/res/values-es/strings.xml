@@ -51,5 +51,9 @@
     <string name="text_btnMovements">Movimientos</string>
     <string name="accept">Aceptar</string>
     <string name="dialogTitleMovements">Detalle del movimiento:</string>
+    <string name="navigation_all">Todos</string>
+    <string name="navigation_t0">Tipo 0</string>
+    <string name="navigation_t1">Tipo 1</string>
+    <string name="navigation_t2">Tipo 2</string>
 
 </resources>
