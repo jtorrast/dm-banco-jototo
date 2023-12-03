@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
+import android.widget.Toast
 import com.example.banco_jototo.R
 import com.example.banco_jototo.databinding.ActivityGlobalPositionDetailsBinding
 import com.example.banco_jototo.fragments.AccountsMovementsFragment
@@ -30,6 +31,29 @@ class GlobalPositionDetailsActivity : AppCompatActivity(), MovementsListener {
             .add(R.id.frgMovimiento, frgMovents).commit()
 
         frgMovents.setListener(this)
+
+        binding.bottomNavigation.setOnNavigationItemSelectedListener {
+            when(it.itemId){
+                R.id.navigation_all->{
+                    Log.i("Bottom Navigation", "Todos los movimientos")
+                    true
+                }
+                R.id.navigation_type0->{
+                    Log.i("Bottom Navigation", "Todos TIPO 0")
+                    true
+                }
+                R.id.navigation_type1->{
+                    Log.i("Bottom Navigation", "Todos TIPO 1")
+                    true
+                }
+                R.id.navigation_type2->{
+                    Log.i("Bottom Navigation", "Todos TIPO 2")
+                    true
+                }
+
+                else -> {false}
+            }
+        }
     }
 
     override fun onMovimientoSeleccionado(movimiento: Movimiento) {
