@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_all"
+        android:title="@string/navigation_all"
+        android:icon="@drawable/ic_transfers"/>
+    <item
+        android:id="@+id/navigation_type0"
+        android:title="@string/navigation_t0"
+        android:icon="@drawable/ic_send"/>
+    <item
+        android:id="@+id/navigation_type1"
+        android:title="@string/navigation_t1"
+        android:icon="@drawable/ic_income"/>
+    <item
+        android:id="@+id/navigation_type2"
+        android:title="@string/navigation_t2"
+        android:icon="@drawable/ic_atm"/>
+
+</menu>
