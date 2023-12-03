@@ -42,16 +42,14 @@ class MovementsAdapter(private val movements: ArrayList<Movimiento>, private val
         with(holder){
             setListener(movement)
             val formateador = SimpleDateFormat("dd/MM/yyyy")
-            var dataInfo = "${formateador.format(movement.getFechaOperacion())} Importe ${movement.getImporte()}"
             binding.rwMovement.text = movement.getDescripcion()
             if (movement.getImporte()!! < 0){
                 binding.rwDataAmount.setTextColor(ContextCompat.getColor(context, R.color.red_error))
             }else{
-                binding.rwDataAmount.setTextColor(ContextCompat.getColor(context,
-                    R.color.azul_electrico_palido
-                ))
+                binding.rwDataAmount.setTextColor(ContextCompat.getColor(context, R.color.azul_electrico_palido))
             }
 
+            var dataInfo = "${formateador.format(movement.getFechaOperacion())} Importe ${movement.getImporte()}"
             binding.rwDataAmount.text = dataInfo
         }
     }

@@ -72,7 +72,7 @@ class LoginActivity : AppCompatActivity() {
             //val pass = binding.passwordEditField.text.toString().trim()
 
             /*DESCOMENTAR PARA PRUEBAS*/
-            val dni = "22222222B"
+            val dni = "11111111A"
             val pass = "1234"
 
             var emptyfields = false
@@ -143,7 +143,8 @@ class LoginActivity : AppCompatActivity() {
         //Comprobación para DNI inventados con 8 digitos y una letra
         val patron = Regex("^[0-9]{8}[A-Za-z]\$")
 
-        return patron.matches(dni)
+        //return true
+       return patron.matches(dni)
 
         /*
         * COMPROBACIÓN DNI CON LETRA

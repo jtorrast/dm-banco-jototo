@@ -329,7 +329,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/attach_money/baseline_attach_money_24.xml" />
+                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/money_off/baseline_money_off_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -340,7 +340,7 @@
                         <option name="values">
                           <map>
                             <entry key="color" value="ffffff" />
-                            <entry key="outputName" value="baseline_attach_money_24" />
+                            <entry key="outputName" value="ic_send" />
                             <entry key="sourceFile" value="C:\Users\torra\Desktop\desarrollo multimedia y movil\aplicacion-bancaria\banco-jototo" />
                           </map>
                         </option>
