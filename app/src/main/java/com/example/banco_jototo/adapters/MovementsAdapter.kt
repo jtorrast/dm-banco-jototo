@@ -15,6 +15,7 @@ class MovementsAdapter(private val movements: ArrayList<Movimiento>, private val
         RecyclerView.Adapter<MovementsAdapter.ViewHolder>(){
             private lateinit var context: Context
             inner class ViewHolder(view: View): RecyclerView.ViewHolder(view){
+
                 val binding = ItemMovementsBinding.bind(view)
 
                 fun setListener(movimiento: Movimiento){

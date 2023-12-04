@@ -97,7 +97,7 @@ class AccountsMovementsFragment : Fragment(), OnClickListenerMovements {
     }
 
     override fun onClick(movimiento: Movimiento) {
-        Log.i("Accounts Movements", movimiento.getDescripcion().toString())
+
         if (listener != null) {
             listener.onMovimientoSeleccionado(movimiento)
         }

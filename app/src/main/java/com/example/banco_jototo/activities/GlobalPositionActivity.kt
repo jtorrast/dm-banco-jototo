@@ -36,44 +36,17 @@ class GlobalPositionActivity : AppCompatActivity(), AccountsListener, MovementsL
         val cliente = intent.getSerializableExtra("Cliente") as Cliente
         Log.e("CLIENTE GLOBAL POSITION", cliente.getNombre()!!)
 
-        val frgAccounts = AccountsFragment.newInstance(cliente as Cliente)
+        val frgAccounts = AccountsFragment.newInstance(cliente)
 
         supportFragmentManager.beginTransaction()
             .add(R.id.frgCuentas, frgAccounts).commit()
 
-        /*PROBAR ESTATICO HAY QUE AÑADIR AL XML DEL LAYOUT Y LA CLASS*/
-        /*var frgAccounts: AccountsFragment = AccountsFragment.newInstance(cliente)
-        frgAccounts = supportFragmentManager.findFragmentById(R.id.frgCuentas) as AccountsFragment*/
-
         frgAccounts.setListener(this)
 
     }
-    /*override fun onClick(obj: Any) {
-        val frgMovements = AccountsMovementsFragment.newInstance(obj as Cuenta)
-
-
-        Log.i("Configuración de pantalla", "Valor de screenLayout: ${resources.configuration.screenLayout}")
-
-        //el valor 268435796 equivale a la pantalla de la tablet
-        if (resources.configuration.screenLayout == 268435796){
-            Log.i("Dispositivo", "tablet")
-
-            //tablet
-                supportFragmentManager.beginTransaction().
-                replace(R.id.frgMovimiento, frgMovements).commit()
-
-        }else{
-            //Pantalla movil, cambiamos actividad
-            val intent = Intent(this, GlobalPositionDetailsActivity::class.java)
-            intent.putExtra("Cuenta", obj as Cuenta)
-            startActivity(intent)
-        }
-
-    }*/
 
     override fun onCuentaSeleccionada(cuenta: Cuenta) {
         val frgMovements = AccountsMovementsFragment.newInstance(cuenta)
-
 
         Log.i("Configuración de pantalla", "Valor de screenLayout: ${resources.configuration.screenLayout}")
 
