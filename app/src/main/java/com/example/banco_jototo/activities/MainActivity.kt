@@ -3,14 +3,14 @@ package com.example.banco_jototo.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.banco_jototo.R
 import com.example.banco_jototo.databinding.ActivityMainBinding
+import com.example.banco_jototo.fragments.MainActivityFragment
 import com.example.banco_jototo.pojo.Cliente
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -20,7 +20,11 @@ class MainActivity : AppCompatActivity() {
 
         val cliente = intent.getSerializableExtra("Cliente") as Cliente
 
-        binding.viewDni.text = cliente.getNombre()
+        val frgMain = MainActivityFragment.newInstance(cliente)
+        supportFragmentManager.beginTransaction()
+            .add(R.id.frgMainActivity, frgMain).commit()
+
+        /*binding.viewDni.text = cliente.getNombre()
 
         binding.btnTransfers.setOnClickListener {
             val intent = Intent(this, TransferActivity::class.java)
@@ -47,7 +51,7 @@ class MainActivity : AppCompatActivity() {
 
         binding.btnExit.setOnClickListener {
             finishAffinity()
-        }
+        }*/
     }
 
 
