@@ -23,35 +23,8 @@ class MainActivity : AppCompatActivity() {
         val frgMain = MainActivityFragment.newInstance(cliente)
         supportFragmentManager.beginTransaction()
             .add(R.id.frgMainActivity, frgMain).commit()
-
-        /*binding.viewDni.text = cliente.getNombre()
-
-        binding.btnTransfers.setOnClickListener {
-            val intent = Intent(this, TransferActivity::class.java)
-            startActivity(intent)
-        }
-
-        binding.btnChangePass.setOnClickListener {
-            val intent = Intent(this, ChangePasswordActivity2::class.java)
-            intent.putExtra("Cliente", cliente)
-            startActivity(intent)
-        }
-
-        binding.btnGlobalPosition.setOnClickListener {
-            val intent = Intent(this, GlobalPositionActivity::class.java)
-            intent.putExtra("Cliente", cliente)
-            startActivity(intent)
-        }
-
-        binding.btnMovements.setOnClickListener {
-            val intent = Intent(this, MovementsActivity::class.java)
-            intent.putExtra("Cliente", cliente)
-            startActivity(intent)
-        }
-
-        binding.btnExit.setOnClickListener {
-            finishAffinity()
-        }*/
+        
+        /*Ahora tendremos que añadir los framents que llamemos desde el menu lateral*/
     }
 
 
