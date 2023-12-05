@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         val frgMain = MainActivityFragment.newInstance(cliente)
         supportFragmentManager.beginTransaction()
             .add(R.id.frgMainActivity, frgMain).commit()
-        
+
         /*Ahora tendremos que añadir los framents que llamemos desde el menu lateral*/
     }
 
