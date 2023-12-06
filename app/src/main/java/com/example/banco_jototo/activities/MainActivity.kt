@@ -25,6 +25,8 @@ class MainActivity : AppCompatActivity() {
             .add(R.id.frgMainActivity, frgMain).commit()
 
         /*Ahora tendremos que añadir los framents que llamemos desde el menu lateral*/
+
+
     }
 
 
