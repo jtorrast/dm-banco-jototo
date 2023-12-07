@@ -60,9 +60,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             navigationView.setCheckedItem(R.id.nav_home)
         }
 
-        /*Ahora tendremos que añadir los framents que llamemos desde el menu lateral*/
-
-
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
