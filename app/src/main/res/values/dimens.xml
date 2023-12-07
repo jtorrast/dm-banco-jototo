@@ -2,6 +2,6 @@
 <resources>
     <dimen name="login_heading">25dp</dimen>
     <dimen name="border_radius_fields">40dp</dimen>
-    <dimen name="card_avatar_size">88dp</dimen>
+    <dimen name="card_avatar_size">75dp</dimen>
     <dimen name="card_imag_size">40dp</dimen>
 </resources>

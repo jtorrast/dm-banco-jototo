@@ -51,9 +51,9 @@
                 android:text="@string/card_welcoming"
                 android:textAppearance="?attr/textAppearanceHeadline5"
                 android:textColor="@color/white"
+                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/avatarCard"
-                app:layout_constraintTop_toTopOf="@+id/guideline1" />
+                app:layout_constraintStart_toEndOf="@+id/avatarCard"/>
 
             <TextView
                 android:id="@+id/view_dni"
@@ -67,13 +67,6 @@
                 app:layout_constraintStart_toStartOf="@id/card_title_welcoming"
                 app:layout_constraintTop_toBottomOf="@+id/card_title_welcoming" />
 
-            <androidx.constraintlayout.widget.Guideline
-                android:id="@+id/guideline1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                app:layout_constraintGuide_end="88dp" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>
@@ -82,13 +75,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="30dp"
         android:layout_marginEnd="16dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@id/welcome_card_view"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/guideline3">
+        app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnGlobalPosition"
@@ -129,6 +120,7 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnExit"
             style="@style/btnSubtle"
+            android:layout_marginTop="-8dp"
             android:layout_gravity="center"
             android:text="@string/text_btn_exit"
             app:icon="@drawable/ic_close"/>
@@ -162,19 +154,5 @@
             app:shapeAppearance="@style/Widget.MaterialComponents.BottomAppBar.Colored" />
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.8" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.21" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

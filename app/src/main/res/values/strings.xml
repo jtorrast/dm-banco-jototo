@@ -60,6 +60,8 @@
     <string name="text_nav_logout">Logout</string>
     <string name="text_nav_config">Settings</string>
     <string name="text_nav_home">Home</string>
+    <string name="open_nav">Open menu nav</string>
+    <string name="close_nav">Close menu nav</string>
 
 
 </resources>
