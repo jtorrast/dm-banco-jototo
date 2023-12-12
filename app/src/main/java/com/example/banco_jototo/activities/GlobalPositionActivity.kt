@@ -50,8 +50,12 @@ class GlobalPositionActivity : AppCompatActivity(), AccountsListener, MovementsL
 
         Log.i("Configuración de pantalla", "Valor de screenLayout: ${resources.configuration.screenLayout}")
 
+        val screenXLarge = 268435796
+
         //el valor 268435796 equivale a la pantalla de la tablet
-        if (resources.configuration.screenLayout == 268435796){
+        if (resources.configuration.screenLayout == Configuration.SCREENLAYOUT_SIZE_XLARGE ||
+            resources.configuration.screenLayout == Configuration.SCREENLAYOUT_SIZE_LARGE ||
+            resources.configuration.screenLayout == 268435796){
             Log.i("Dispositivo", "tablet")
             frgMovements.setListener(this)
 
