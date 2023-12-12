@@ -71,7 +71,7 @@ class MainActivityFragment : Fragment() {
         }
 
         binding.btnExit.setOnClickListener {
-            //finishAffinity()
+            requireActivity().finishAffinity()
         }
 
         return binding.root

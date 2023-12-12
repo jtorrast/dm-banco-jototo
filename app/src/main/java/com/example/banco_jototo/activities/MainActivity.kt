@@ -76,6 +76,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     .replace(R.id.frgMainActivity, frgMainAccounts).commit()
                 frgMainAccounts.setListener(this)
             }
+            R.id.nav_logout->{
+                System.exit(0)
+            }
         }
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
