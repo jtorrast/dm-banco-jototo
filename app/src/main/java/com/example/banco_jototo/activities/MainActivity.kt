@@ -76,6 +76,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     .replace(R.id.frgMainActivity, frgMainAccounts).commit()
                 frgMainAccounts.setListener(this)
             }
+            R.id.nav_settings ->{
+                val intent = Intent(this, SettingsActivity::class.java)
+                startActivity(intent)
+            }
             R.id.nav_logout->{
                 System.exit(0)
             }
