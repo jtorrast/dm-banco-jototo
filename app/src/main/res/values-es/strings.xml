@@ -55,5 +55,17 @@
     <string name="navigation_t0">Tipo 0</string>
     <string name="navigation_t1">Tipo 1</string>
     <string name="navigation_t2">Tipo 2</string>
+    <string name="text_nav_logout">Cerrar sesión</string>
+    <string name="text_nav_config">Preferencias</string>
+    <string name="text_nav_home">Principal</string>
+    <string name="sync_header">Idioma</string>
+    <string name="messages_header_multimedia">Multimedia</string>
+    <string name="music_title">Música</string>
+    <string name="text_music_off">No escuchar la musica mientras se ejecuta la aplicación</string>
+    <string name="text_music_on">Escuchar la música miesntras se ejecuta la aplicación</string>
+    <string name="text_video_off">No reproducir un video al iniciar la aplicación</string>
+    <string name="text_video_on">Reproducir un video al iniciar la aplicación</string>
+    <string name="video_title">Video de bienvenida</string>
+    <string name="title_data">Datos</string>
 
 </resources>

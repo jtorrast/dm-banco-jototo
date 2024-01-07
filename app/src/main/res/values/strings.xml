@@ -65,19 +65,21 @@
     <string name="title_activity_settings">SettingsActivity</string>
 
     <!-- Preference Titles -->
-    <string name="messages_header">Messages</string>
-    <string name="sync_header">Sync</string>
+    <string name="sync_header">Language</string>
 
-    <!-- Messages Preferences -->
-    <string name="signature_title">Your signature</string>
-    <string name="reply_title">Default reply action</string>
-
-    <!-- Sync Preferences -->
-    <string name="sync_title">Sync email periodically</string>
-    <string name="attachment_title">Download incoming attachments</string>
-    <string name="attachment_summary_on">Automatically download attachments for incoming emails
-    </string>
-    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="messages_header_multimedia">Multimedia</string>
+    <string name="music_title">Music</string>
+    <string name="text_music_off">Do not listen to the music while the application is running.</string>
+    <string name="text_music_on">Listen to music while the application is running</string>
+    <string name="text_video_off">Do not play a video when starting the application</string>
+    <string name="text_video_on">Play a video when starting the application</string>
+    <string name="video_title">Welcome video</string>
+    <string name="title_data">Data</string>
+    <string name="text_language">App language</string>
+    <string name="text_chose_language">Select language</string>
+    <string name="text_data">Data origin\n</string>
+    <string name="local_data_text">Local data</string>
+    <string name="web_data_text">Web service</string>
 
 
 </resources>
