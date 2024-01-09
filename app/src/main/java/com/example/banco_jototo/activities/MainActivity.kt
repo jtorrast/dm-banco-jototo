@@ -2,6 +2,7 @@ package com.example.banco_jototo.activities
 
 import android.content.DialogInterface
 import android.content.Intent
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -29,6 +30,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     //private lateinit var binding: ActivityMainBinding
 
+    private var mediaPlayer: MediaPlayer? = null
     private lateinit var drawerLayout: DrawerLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,6 +38,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        mediaPlayer = MediaPlayer.create(this, R.raw)
 
         drawerLayout = findViewById(R.id.drawer_layout)
 
