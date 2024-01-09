@@ -42,6 +42,7 @@
             app:dialogTitle="@string/text_data"
             app:entries="@array/data_origin"
             app:entryValues="@array/languagecode"/>
+
     </PreferenceCategory>
 
 </PreferenceScreen>

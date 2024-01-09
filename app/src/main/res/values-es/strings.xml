@@ -67,5 +67,10 @@
     <string name="text_video_on">Reproducir un video al iniciar la aplicación</string>
     <string name="video_title">Video de bienvenida</string>
     <string name="title_data">Datos</string>
+    <string name="text_language">Idioma de la aplicación</string>
+    <string name="text_chose_language">Selecciona idioma</string>
+    <string name="text_data">Origen de los datos</string>
+    <string name="local_data_text">Datos Locales</string>
+    <string name="web_data_text">Servicio web</string>
 
 </resources>
