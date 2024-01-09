@@ -1,9 +1,11 @@
 package com.example.banco_jototo.activities
 
 import android.content.Intent
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.preference.PreferenceManager
 import com.example.banco_jototo.R
 import com.example.banco_jototo.bd.MiBancoOperacional
 import com.example.banco_jototo.databinding.ActivityLoginBinding
@@ -115,12 +117,32 @@ class LoginActivity : AppCompatActivity() {
                     if (existClient == -1){
                         binding.passwordField.error = getString(R.string.error_wrong_password)
                     }else{
+
+                        val pref: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(this@LoginActivity)
+
+
+
+                        var verAnimacion = pref.getBoolean("reproducirVideo", true)
+
+
+                        if (verAnimacion) {
+                            val intent = Intent(this, LottieActivity::class.java)
+                            intent.putExtra("Cliente", existClient)
+                            startActivity(intent)
+                        }else{
+                            val intent = Intent(this, MainActivity::class.java)
+                            intent.putExtra("Cliente", existClient)
+                            startActivity(intent)
+                        }
+
+
+
                         /*Descomentar para entrear en la animación*/
                         //val intent = Intent(this, LottieActivity::class.java)
                         /*Descomentar para saltar la animación*/
-                        val intent = Intent(this, MainActivity::class.java)
-                        intent.putExtra("Cliente", existClient)
-                        startActivity(intent)
+                        //val intent = Intent(this, MainActivity::class.java)
+                        //intent.putExtra("Cliente", existClient)
+                        //startActivity(intent)
                     }
                 }else{
                     binding.passwordField.error = getString(R.string.error_password_length)
