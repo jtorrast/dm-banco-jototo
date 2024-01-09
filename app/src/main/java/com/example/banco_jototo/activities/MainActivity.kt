@@ -2,6 +2,7 @@ package com.example.banco_jototo.activities
 
 import android.content.DialogInterface
 import android.content.Intent
+import android.content.SharedPreferences
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,6 +13,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.preference.PreferenceManager
 import com.example.banco_jototo.R
 import com.example.banco_jototo.databinding.ActivityMainBinding
 import com.example.banco_jototo.fragments.AccountsFragment
@@ -38,7 +40,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        mediaPlayer = MediaPlayer.create(this, R.raw)
+        mediaPlayer = MediaPlayer.create(this, R.raw.audio)
+
 
         drawerLayout = findViewById(R.id.drawer_layout)
 
@@ -62,6 +65,26 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 .replace(R.id.frgMainActivity, frgMain).commit()
             navigationView.setCheckedItem(R.id.nav_home)
         }
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val pref: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(this@MainActivity)
+        Log.i("MainActivity", "Reproducir musica: "+pref.getBoolean("reproducirMusica", false))
+
+        if (pref.getBoolean("reproducirMusica", false)){
+            mediaPlayer?.start()
+        }
+
+
+    }
+
+    override fun onStop() {
+        super.onStop()
+        mediaPlayer?.stop()
+        mediaPlayer?.release()
+        mediaPlayer = null
 
     }
 
