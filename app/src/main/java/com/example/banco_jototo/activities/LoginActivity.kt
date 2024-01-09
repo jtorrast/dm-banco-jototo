@@ -121,10 +121,8 @@ class LoginActivity : AppCompatActivity() {
                         val pref: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(this@LoginActivity)
 
 
-
+                        /*Controlamos la animacion leyendo las preferencias de usuario*/
                         var verAnimacion = pref.getBoolean("reproducirVideo", true)
-
-
                         if (verAnimacion) {
                             val intent = Intent(this, LottieActivity::class.java)
                             intent.putExtra("Cliente", existClient)
