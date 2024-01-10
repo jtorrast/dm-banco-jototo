@@ -19,22 +19,18 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-
-
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         binding.idEditText.onFocusChangeListener = View.OnFocusChangeListener { v, hasFocus ->
+
             val dni = binding.idEditText.text.toString().trim().uppercase()
 
-
             if (!hasFocus) {
-
                 if (dni.isEmpty()) {
                     binding.idField.error = getString(R.string.error_empty_field)
                 }else{
                     binding.idField.error = null
-
                     if (!validID(dni)){
                         binding.idField.error = getString(R.string.error_id_field)
                     }else{
@@ -42,11 +38,11 @@ class LoginActivity : AppCompatActivity() {
                     }
                 }
             }
+
         }
 
         binding.passwordEditField.onFocusChangeListener = View.OnFocusChangeListener { v, hasFocus ->
             val pass = binding.passwordEditField.text.toString().trim().uppercase()
-
 
             if (!hasFocus) {
 
@@ -54,7 +50,6 @@ class LoginActivity : AppCompatActivity() {
                     binding.passwordField.error = getString(R.string.error_empty_field)
                 }else{
                     binding.passwordField.error = null
-
                     if (pass.length < passwordLength){
                         binding.passwordField.error = getString(R.string.error_password_length)
                     }else{
@@ -63,9 +58,6 @@ class LoginActivity : AppCompatActivity() {
                 }
             }
         }
-
-
-
 
         binding.btnLogin.setOnClickListener {
 
@@ -132,8 +124,6 @@ class LoginActivity : AppCompatActivity() {
                             intent.putExtra("Cliente", existClient)
                             startActivity(intent)
                         }
-
-
 
                         /*Descomentar para entrear en la animación*/
                         //val intent = Intent(this, LottieActivity::class.java)
