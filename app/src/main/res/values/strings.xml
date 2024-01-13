@@ -80,6 +80,10 @@
     <string name="text_data">Data origin\n</string>
     <string name="local_data_text">Local data</string>
     <string name="web_data_text">Web service</string>
+    <string name="text_atm_title">ATM\n</string>
+    <string name="text_btn_atm_list">ATM LIST</string>
+    <string name="text_btn_atm_add">ATM ADD</string>
+    <string name="text_btn_atm_maps">ATM MAPS</string>
 
 
 </resources>

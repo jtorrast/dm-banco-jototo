@@ -72,5 +72,9 @@
     <string name="text_data">Origen de los datos</string>
     <string name="local_data_text">Datos Locales</string>
     <string name="web_data_text">Servicio web</string>
+    <string name="text_atm_title">ATM</string>
+    <string name="text_btn_atm_list">LISTA CAJEROS</string>
+    <string name="text_btn_atm_add">AÑADIR CAJERO</string>
+    <string name="text_btn_atm_maps">MAPAS CAJEROS</string>
 
 </resources>
