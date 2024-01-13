@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.banco_jototo.R
+import com.example.banco_jototo.activities.AtmManagementActivity
 import com.example.banco_jototo.activities.ChangePasswordActivity2
 import com.example.banco_jototo.activities.GlobalPositionActivity
 import com.example.banco_jototo.activities.MovementsActivity
@@ -66,6 +67,12 @@ class MainActivityFragment : Fragment() {
 
         binding.btnMovements.setOnClickListener {
             val intent = Intent(context, MovementsActivity::class.java)
+            intent.putExtra("Cliente", cliente)
+            startActivity(intent)
+        }
+
+        binding.btnAtm.setOnClickListener {
+            val intent = Intent(context, AtmManagementActivity::class.java)
             intent.putExtra("Cliente", cliente)
             startActivity(intent)
         }

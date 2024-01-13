@@ -106,6 +106,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 val intent = Intent(this, SettingsActivity::class.java)
                 startActivity(intent)
             }
+            R.id.nav_atm->{
+                val intent = Intent(this, AtmManagementActivity::class.java)
+                intent.putExtra("Cliente", cliente)
+                startActivity(intent)
+            }
             R.id.nav_logout->{
                 System.exit(0)
             }
