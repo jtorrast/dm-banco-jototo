@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.AtmFormActivity"
+    android:orientation="vertical"
+    android:background="@color/azul_oscuro_profundo">
+
+    <TextView
+        android:id="@+id/atmManagementTitle"
+        style="@style/titleSectionStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_atm_management_title"/>
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/contenedorFragmentAtm"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

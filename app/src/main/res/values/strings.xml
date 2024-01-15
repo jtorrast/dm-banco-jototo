@@ -85,6 +85,12 @@
     <string name="text_btn_atm_add">ATM ADD</string>
     <string name="text_btn_atm_maps">ATM MAPS</string>
     <string name="text_atm_num">ATM 1</string>
+    <string name="text_atm_management_title">Management ATM</string>
+    <string name="text_atm_addres">Address</string>
+    <string name="text_atm_latitude">Latitude</string>
+    <string name="text_atm_longitude">Longitude</string>
+    <string name="text_save_atm">SAVE</string>
+    <string name="text_cancel_atm">CANCEL</string>
 
 
 </resources>

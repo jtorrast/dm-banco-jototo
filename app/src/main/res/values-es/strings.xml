@@ -76,5 +76,10 @@
     <string name="text_btn_atm_list">LISTA CAJEROS</string>
     <string name="text_btn_atm_add">AÑADIR CAJERO</string>
     <string name="text_btn_atm_maps">MAPAS CAJEROS</string>
+    <string name="text_atm_num">ATM 1</string>
+    <string name="text_atm_management_title">Administración ATM</string>
+    <string name="text_atm_addres">Dirección</string>
+    <string name="text_atm_latitude">Latitud</string>
+    <string name="text_atm_longitude">Longuitud</string>
 
 </resources>
