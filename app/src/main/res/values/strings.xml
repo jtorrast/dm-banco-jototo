@@ -84,6 +84,7 @@
     <string name="text_btn_atm_list">ATM LIST</string>
     <string name="text_btn_atm_add">ATM ADD</string>
     <string name="text_btn_atm_maps">ATM MAPS</string>
+    <string name="text_atm_num">ATM 1</string>
 
 
 </resources>

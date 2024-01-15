@@ -16,38 +16,41 @@
         app:cardBackgroundColor="#1B2F4A"
         app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="8dp"
-            android:layout_gravity="center_vertical">
+            android:layout_gravity="center_vertical"
+            android:padding="8dp">
+
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/icRV_globalPosition"
                 android:layout_width="@dimen/card_imag_size"
                 android:layout_height="@dimen/card_imag_size"
                 android:src="@drawable/ic_global_position"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/numAccountRV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:text="Numero de cuenta"
-                android:textColor="@color/white"
                 android:layout_marginStart="16dp"
+                android:textColor="@color/white"
                 app:layout_constraintStart_toEndOf="@id/icRV_globalPosition"
-                app:layout_constraintTop_toTopOf="parent"/>
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Numero de cuenta" />
+
             <TextView
                 android:id="@+id/balanceRV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:text="Saldo"
-                android:textColor="@color/white"
                 android:layout_marginStart="16dp"
+                android:textColor="@color/white"
                 app:layout_constraintStart_toEndOf="@id/icRV_globalPosition"
-                app:layout_constraintTop_toBottomOf="@id/numAccountRV"/>
+                app:layout_constraintTop_toBottomOf="@id/numAccountRV"
+                tools:text="Saldo" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

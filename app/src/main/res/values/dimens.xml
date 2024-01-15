@@ -4,4 +4,7 @@
     <dimen name="border_radius_fields">40dp</dimen>
     <dimen name="card_avatar_size">75dp</dimen>
     <dimen name="card_imag_size">40dp</dimen>
+    <dimen name="common_padding_min">8dp</dimen>
+    <dimen name="common_padding_default">16dp</dimen>
+    <dimen name="common_padding_middle">24dp</dimen>
 </resources>

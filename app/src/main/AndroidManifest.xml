@@ -14,6 +14,9 @@
         android:theme="@style/Theme.Bancojototo"
         tools:targetApi="31">
         <activity
+            android:name=".activities.AtmListActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.AtmManagementActivity"
             android:exported="false" />
         <activity
