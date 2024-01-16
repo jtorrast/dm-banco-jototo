@@ -95,6 +95,11 @@
     <string name="select_atm_text">Select ATM:</string>
     <string name="text_menu_delete">Delete</string>
     <string name="text_menu_update">Update</string>
+    <string name="text_atm_id">Id</string>
+    <string name="text_toolbar_update">Update Atm</string>
+    <string name="text_toolbar_add">Add Atm</string>
+    <string name="text_toolbar_delete">Delte Atm</string>
+
 
 
 </resources>

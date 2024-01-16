@@ -3,12 +3,96 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.ModificarEliminarCajerosFragment">
+    tools:context=".fragments.ModificarEliminarCajerosFragment"
+    android:background="@color/azul_oscuro_profundo">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical"
+        android:layout_marginHorizontal="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/text_atm_id"
+            android:textColor="@color/azul_electrico_palido"
+            android:textSize="20sp"/>
+        <EditText
+            android:id="@+id/etId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Escribe direccion"
+            android:inputType="number"
+            android:textColor="@color/white"/>
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/text_atm_addres"
+            android:textColor="@color/azul_electrico_palido"
+            android:textSize="20sp"/>
+        <EditText
+            android:id="@+id/etDireccion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Escribe direccion"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/text_atm_latitude"
+            android:textSize="20sp"
+            android:textColor="@color/azul_electrico_palido"/>
+        <EditText
+            android:id="@+id/etLatitud"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Escribe latitud"
+            android:inputType="numberDecimal"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/text_atm_longitude"
+            android:textSize="20sp"
+            android:textColor="@color/azul_electrico_palido"/>
+        <EditText
+            android:id="@+id/etLongitud"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Escribe latitud"
+            android:inputType="numberDecimal"
+            android:textColor="@color/white"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSaveAtm"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="16dp"
+                android:text="@string/text_save_atm"
+                />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCancelAtm"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/text_cancel_atm"/>
+        </LinearLayout>
+
+    </LinearLayout>
 
 </FrameLayout>

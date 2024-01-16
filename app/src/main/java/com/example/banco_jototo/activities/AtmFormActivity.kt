@@ -8,6 +8,7 @@ import android.widget.Toast
 import com.example.banco_jototo.R
 import com.example.banco_jototo.databinding.ActivityAtmFormBinding
 import com.example.banco_jototo.fragments.AddCajeroFragment
+import com.example.banco_jototo.fragments.ModificarEliminarCajerosFragment
 
 class AtmFormActivity : AppCompatActivity() {
 
@@ -26,6 +27,8 @@ class AtmFormActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction()
             .add(R.id.contenedorFragmentAtm, AddCajeroFragment()).commit()
 
+        binding.toolbarTitle.text = getString(R.string.text_toolbar_add)
+
 
     }
 
@@ -37,11 +40,13 @@ class AtmFormActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when(item.itemId){
             R.id.action_delete->{
-                showToast("Opción delete seleccionada")
+                supportFragmentManager.beginTransaction().add(R.id.contenedorFragmentAtm, ModificarEliminarCajerosFragment()).commit()
+                binding.toolbarTitle.text = getString(R.string.text_toolbar_delete)
                 true
             }
             R.id.action_update->{
-                showToast("Opcion update")
+                supportFragmentManager.beginTransaction().add(R.id.contenedorFragmentAtm, ModificarEliminarCajerosFragment()).commit()
+                binding.toolbarTitle.text = getString(R.string.text_toolbar_update)
                 true
             }
 

@@ -17,7 +17,16 @@
         android:background="?attr/colorPrimary"
         android:elevation="4dp"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+        <TextView
+            android:id="@+id/toolbarTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mi Toolbar"
+            android:textColor="#fff"
+            android:textSize="26sp"
+            android:textStyle="bold"/>
+    </androidx.appcompat.widget.Toolbar>
 
     <TextView
         android:id="@+id/atmManagementTitle"

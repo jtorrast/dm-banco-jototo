@@ -64,6 +64,12 @@ class AddCajeroFragment : Fragment() {
 
         }
 
+        binding.btnCancelAtm.setOnClickListener {
+            binding.etDireccion.text.clear()
+            binding.etLatitud.text.clear()
+            binding.etLongitud.text.clear()
+        }
+
         return binding.root
     }
 
