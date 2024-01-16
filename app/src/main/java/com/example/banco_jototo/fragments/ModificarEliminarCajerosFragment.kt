@@ -1,6 +1,7 @@
 package com.example.banco_jototo.fragments
 
 import android.os.Bundle
+import android.text.Editable
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -14,23 +15,20 @@ import com.example.banco_jototo.entities.CajeroEntity
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_TIPO = "param1"
+private const val ARG_CAJERO = "cajero"
 
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ModificarEliminarCajerosFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ModificarEliminarCajerosFragment : Fragment() {
 
     private lateinit var binding: FragmentModificarEliminarCajerosBinding
 
     private var esDelete: Boolean? = null
+    private lateinit var cajero: CajeroEntity
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
+            cajero = it.getSerializable(ARG_CAJERO) as CajeroEntity
             esDelete = it.getBoolean(ARG_TIPO, true)
         }
     }
@@ -42,16 +40,34 @@ class ModificarEliminarCajerosFragment : Fragment() {
 
         binding = FragmentModificarEliminarCajerosBinding.inflate(inflater, container, false)
 
+        if (cajero != null){
+
+            binding.etId.text = Editable.Factory.getInstance().newEditable(cajero.id.toString())
+            binding.etDireccion.text = Editable.Factory.getInstance().newEditable(cajero.direccion.toString())
+            binding.etLatitud.text = Editable.Factory.getInstance().newEditable(cajero.latitud.toString())
+            binding.etLongitud.text = Editable.Factory.getInstance().newEditable(cajero.longuitud.toString())
+
+        }
+
         binding.btnSaveAtm.setOnClickListener {
 
             var id = binding.etId.text.toString().trim().toLong()
 
             if (esDelete == true){
 
-                val cajero = CajeroEntity(id = id, direccion = "", latitud = 0.0, longuitud = 0.0)
+                var cajeroEliminar = CajeroEntity(id = id, direccion = "", latitud = 0.0, longuitud = 0.0)
+
+                if (cajero != null){
+                    val direccion = binding.etDireccion.text.toString().trim()
+                    val latitud = binding.etLatitud.text.toString().trim().toDouble()
+                    val longuitud = binding.etLongitud.text.toString().trim().toDouble()
+
+                    cajeroEliminar = CajeroEntity(id = id, direccion = direccion, latitud = latitud, longuitud = longuitud)
+
+                }
 
                 Thread{
-                    CajeroApplication.database.cajeroDao().deleteCajero(cajero)
+                    CajeroApplication.database.cajeroDao().deleteCajero(cajeroEliminar)
 
                     // Cambiar por un dialogo
                     activity?.runOnUiThread {
@@ -109,6 +125,15 @@ class ModificarEliminarCajerosFragment : Fragment() {
             ModificarEliminarCajerosFragment().apply {
                 arguments = Bundle().apply {
                     putBoolean(ARG_TIPO, d)
+                }
+            }
+
+        @JvmStatic
+        fun newInstance(d: Boolean, cajero: CajeroEntity) =
+            ModificarEliminarCajerosFragment().apply {
+                arguments = Bundle().apply {
+                    putBoolean(ARG_TIPO, d)
+                    putSerializable(ARG_CAJERO, cajero)
                 }
             }
     }

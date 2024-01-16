@@ -1,11 +1,10 @@
 package com.example.banco_jototo.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.banco_jototo.R
 import com.example.banco_jototo.adapters.AtmListAdapter
 import com.example.banco_jototo.adapters.OnClickListenerCajero
 import com.example.banco_jototo.bd.CajeroApplication
@@ -58,7 +57,10 @@ class AtmListActivity : AppCompatActivity(), OnClickListenerCajero {
     }
 
     override fun onClick(cajeroEntity: CajeroEntity) {
-        println("Click cajero ${cajeroEntity.id}")
+        println("ATMList ${cajeroEntity.id}")
+        val intent = Intent(this, AtmFormActivity::class.java)
+        intent.putExtra("Cajero", cajeroEntity)
+        startActivity(intent)
     }
 
 

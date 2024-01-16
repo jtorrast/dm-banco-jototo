@@ -7,8 +7,10 @@ import android.view.MenuItem
 import android.widget.Toast
 import com.example.banco_jototo.R
 import com.example.banco_jototo.databinding.ActivityAtmFormBinding
+import com.example.banco_jototo.entities.CajeroEntity
 import com.example.banco_jototo.fragments.AddCajeroFragment
 import com.example.banco_jototo.fragments.ModificarEliminarCajerosFragment
+import com.example.banco_jototo.pojo.Cliente
 
 class AtmFormActivity : AppCompatActivity() {
 
@@ -24,10 +26,19 @@ class AtmFormActivity : AppCompatActivity() {
         setSupportActionBar(toolBar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
-        supportFragmentManager.beginTransaction()
-            .add(R.id.contenedorFragmentAtm, AddCajeroFragment()).commit()
+        val cajero = intent.getSerializableExtra("Cajero") as CajeroEntity
 
-        binding.toolbarTitle.text = getString(R.string.text_toolbar_add)
+        if (cajero == null) {
+            supportFragmentManager.beginTransaction()
+                .add(R.id.contenedorFragmentAtm, AddCajeroFragment()).commit()
+            binding.toolbarTitle.text = getString(R.string.text_toolbar_add)
+        }else{
+            val frgUpdate = ModificarEliminarCajerosFragment.newInstance(false, cajero)
+            supportFragmentManager.beginTransaction().add(R.id.contenedorFragmentAtm, frgUpdate).commit()
+            binding.toolbarTitle.text = getString(R.string.text_toolbar_update)
+        }
+
+
 
 
     }
@@ -38,17 +49,28 @@ class AtmFormActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val cajero = intent.getSerializableExtra("Cajero") as CajeroEntity
         return when(item.itemId){
             R.id.action_delete->{
 
-                val frgDelete = ModificarEliminarCajerosFragment.newInstance(true)
+                var frgDelete = ModificarEliminarCajerosFragment.newInstance(true)
+
+                if (cajero != null){
+                    frgDelete = ModificarEliminarCajerosFragment.newInstance(true, cajero)
+                }
 
                 supportFragmentManager.beginTransaction().add(R.id.contenedorFragmentAtm, frgDelete).commit()
                 binding.toolbarTitle.text = getString(R.string.text_toolbar_delete)
                 true
             }
             R.id.action_update->{
-                val frgUpdate = ModificarEliminarCajerosFragment.newInstance(false)
+
+                var frgUpdate = ModificarEliminarCajerosFragment.newInstance(true)
+
+                if (cajero != null){
+                    frgUpdate = ModificarEliminarCajerosFragment.newInstance(true, cajero)
+                }
+
                 supportFragmentManager.beginTransaction().add(R.id.contenedorFragmentAtm, frgUpdate).commit()
                 binding.toolbarTitle.text = getString(R.string.text_toolbar_update)
                 true

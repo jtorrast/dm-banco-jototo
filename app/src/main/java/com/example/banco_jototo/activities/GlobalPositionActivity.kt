@@ -7,12 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
-import androidx.lifecycle.ReportFragment.Companion.reportFragment
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.banco_jototo.R
-import com.example.banco_jototo.adapters.AccountAdapter
-import com.example.banco_jototo.adapters.OnClickListener
-import com.example.banco_jototo.bd.MiBancoOperacional
 import com.example.banco_jototo.databinding.ActivityGlobalPositionBinding
 import com.example.banco_jototo.fragments.AccountsFragment
 import com.example.banco_jototo.fragments.AccountsListener

@@ -25,8 +25,7 @@ class AtmManagementActivity : AppCompatActivity() {
         binding = ActivityAtmManagementBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val cliente = intent.getSerializableExtra("Cliente") as Cliente
-        println(cliente.getNombre())
+        //val cliente = intent.getSerializableExtra("Cliente") as Cliente
 
         binding.btnAtmList.setOnClickListener {
             val intent = Intent(this, AtmListActivity::class.java)
