@@ -5,22 +5,23 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.example.banco_jototo.R
+import com.example.banco_jototo.bd.CajeroApplication
+import com.example.banco_jototo.databinding.ActivityAtmFormBinding
+import com.example.banco_jototo.databinding.FragmentAddCajeroBinding
+import com.example.banco_jototo.entities.CajeroEntity
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [AddCajeroFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class AddCajeroFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+
+    private lateinit var binding: FragmentAddCajeroBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,8 +35,36 @@ class AddCajeroFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add_cajero, container, false)
+        binding = FragmentAddCajeroBinding.inflate(inflater, container, false)
+
+        binding.btnSaveAtm.setOnClickListener {
+            var direccion = binding.etDireccion.text.toString().trim()
+            var latitud: Double = binding.etLatitud.text.toString().trim().toDouble()
+            var longuitud: Double = binding.etLongitud.text.toString().trim().toDouble()
+
+            val cajero = CajeroEntity(direccion = direccion, latitud = latitud, longuitud = longuitud);
+
+            Thread{
+                CajeroApplication.database.cajeroDao().addCajero(cajero)
+
+                // Muestra el Toast en el hilo principal
+                activity?.runOnUiThread {
+                    Toast.makeText(context, "Cajero guardado", Toast.LENGTH_SHORT).show()
+                }
+
+                // Limpia los EditText en el hilo principal
+                activity?.runOnUiThread {
+                    binding.etDireccion.text.clear()
+                    binding.etLatitud.text.clear()
+                    binding.etLongitud.text.clear()
+                }
+
+
+            }.start()
+
+        }
+
+        return binding.root
     }
 
     companion object {

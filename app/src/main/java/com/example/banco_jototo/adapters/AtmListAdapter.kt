@@ -37,6 +37,7 @@ class AtmListAdapter(private var cajeros: MutableList<CajeroEntity>, private var
         with(holder){
             binding.tvAtmNum.text = "ATM ${cajero.id.toString()}"
             binding.tvAtmDir.text = cajero.direccion
+            setListener(cajero)
         }
     }
 
@@ -46,7 +47,7 @@ class AtmListAdapter(private var cajeros: MutableList<CajeroEntity>, private var
     }
 
     fun setCajeros(cajero: MutableList<CajeroEntity>){
-        this.cajeros = cajeros
+        this.cajeros = cajero
         notifyDataSetChanged()
     }
 

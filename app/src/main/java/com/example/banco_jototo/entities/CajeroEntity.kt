@@ -4,8 +4,8 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "cajeros")
-data class CajeroEntity(@PrimaryKey(autoGenerate = true) var id: Int,
+data class CajeroEntity(@PrimaryKey(autoGenerate = true) var id: Long = 0,
                         var direccion: String,
                         var latitud: Double,
                         var longuitud: Double,
-                        var zoom: String)
+                        var zoom: String = "")

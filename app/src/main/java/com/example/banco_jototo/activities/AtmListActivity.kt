@@ -3,6 +3,8 @@ package com.example.banco_jototo.activities
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.banco_jototo.R
 import com.example.banco_jototo.adapters.AtmListAdapter
 import com.example.banco_jototo.adapters.OnClickListenerCajero
@@ -14,6 +16,7 @@ import java.util.concurrent.LinkedBlockingQueue
 class AtmListActivity : AppCompatActivity(), OnClickListenerCajero {
 
     private lateinit var binding: ActivityAtmListBinding
+    private lateinit var linearLayoutManager: LinearLayoutManager
     private lateinit var mAdapter: AtmListAdapter
 
 
@@ -22,12 +25,26 @@ class AtmListActivity : AppCompatActivity(), OnClickListenerCajero {
         binding = ActivityAtmListBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+
         setupRecyclerView()
 
     }
 
     private fun setupRecyclerView() {
         mAdapter = AtmListAdapter(mutableListOf(), this)
+        linearLayoutManager = LinearLayoutManager(this)
+
+        // Obtén la referencia del RecyclerView desde el layout
+        val recyclerView: RecyclerView = binding.rvListaAtm
+
+        // Asigna el adaptador al RecyclerView
+        recyclerView.adapter = mAdapter
+
+        // Configura el LinearLayoutManager para el RecyclerView
+        recyclerView.layoutManager = linearLayoutManager
+
+        // Llamada a getCajeros para obtener datos y actualizar el adaptador
         getCajeros()
     }
 
@@ -43,4 +60,6 @@ class AtmListActivity : AppCompatActivity(), OnClickListenerCajero {
     override fun onClick(cajeroEntity: CajeroEntity) {
         println("Click cajero ${cajeroEntity.id}")
     }
+
+
 }

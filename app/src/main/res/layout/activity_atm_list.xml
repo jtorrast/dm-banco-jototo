@@ -8,11 +8,34 @@
     tools:context=".activities.AtmListActivity"
     android:background="@color/azul_oscuro_profundo">
 
+    <TextView
+        android:id="@+id/atmListTitle"
+        style="@style/titleSectionStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_atm_list_title"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <TextView
+        android:id="@+id/selectAtm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/select_atm_text"
+        android:textColor="@color/white"
+        android:layout_marginHorizontal="16dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:paddingVertical="16dp"
+        app:layout_constraintTop_toBottomOf="@id/atmListTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvListaAtm"
         android:layout_width="0dp"
         android:layout_height="0dp"
         tools:listitem="@layout/item_atm"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/selectAtm"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
