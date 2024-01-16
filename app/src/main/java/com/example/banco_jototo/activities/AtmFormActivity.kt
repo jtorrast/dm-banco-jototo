@@ -26,7 +26,7 @@ class AtmFormActivity : AppCompatActivity() {
         setSupportActionBar(toolBar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
-        val cajero = intent.getSerializableExtra("Cajero") as CajeroEntity
+        val cajero = intent.getSerializableExtra("Cajero") as? CajeroEntity
 
         if (cajero == null) {
             supportFragmentManager.beginTransaction()
