@@ -40,12 +40,16 @@ class AtmFormActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when(item.itemId){
             R.id.action_delete->{
-                supportFragmentManager.beginTransaction().add(R.id.contenedorFragmentAtm, ModificarEliminarCajerosFragment()).commit()
+
+                val frgDelete = ModificarEliminarCajerosFragment.newInstance(true)
+
+                supportFragmentManager.beginTransaction().add(R.id.contenedorFragmentAtm, frgDelete).commit()
                 binding.toolbarTitle.text = getString(R.string.text_toolbar_delete)
                 true
             }
             R.id.action_update->{
-                supportFragmentManager.beginTransaction().add(R.id.contenedorFragmentAtm, ModificarEliminarCajerosFragment()).commit()
+                val frgUpdate = ModificarEliminarCajerosFragment.newInstance(false)
+                supportFragmentManager.beginTransaction().add(R.id.contenedorFragmentAtm, frgUpdate).commit()
                 binding.toolbarTitle.text = getString(R.string.text_toolbar_update)
                 true
             }
@@ -54,8 +58,4 @@ class AtmFormActivity : AppCompatActivity() {
         }
     }
 
-    private fun showToast(mensaje: String): Boolean{
-        Toast.makeText(this, mensaje, Toast.LENGTH_SHORT).show()
-        return true
-    }
 }

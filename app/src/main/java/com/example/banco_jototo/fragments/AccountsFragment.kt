@@ -32,7 +32,6 @@ class AccountsFragment: Fragment(), OnClickListener {
         super.onCreate(savedInstanceState)
         arguments?.let {
             cliente = it.getSerializable(ARG_CLIENTE) as Cliente
-            Log.e("Cliente INICIALIZADO", cliente.getNombre().toString())
         }
     }
 
@@ -80,7 +79,6 @@ class AccountsFragment: Fragment(), OnClickListener {
             AccountsFragment().apply {
                 arguments = Bundle().apply {
                     putSerializable(ARG_CLIENTE, c)
-                    Log.e("NEW INSTANCE", c.getNombre()!!)
                 }
             }
     }

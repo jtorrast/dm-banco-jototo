@@ -5,12 +5,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.example.banco_jototo.R
+import com.example.banco_jototo.bd.CajeroApplication
+import com.example.banco_jototo.databinding.FragmentModificarEliminarCajerosBinding
+import com.example.banco_jototo.entities.CajeroEntity
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+private const val ARG_TIPO = "param1"
+
 
 /**
  * A simple [Fragment] subclass.
@@ -18,15 +22,16 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  */
 class ModificarEliminarCajerosFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+    private lateinit var binding: FragmentModificarEliminarCajerosBinding
+
+    private var esDelete: Boolean? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+            esDelete = it.getBoolean(ARG_TIPO, true)
         }
     }
 
@@ -34,26 +39,76 @@ class ModificarEliminarCajerosFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_modificar_eliminar_cajeros, container, false)
+
+        binding = FragmentModificarEliminarCajerosBinding.inflate(inflater, container, false)
+
+        binding.btnSaveAtm.setOnClickListener {
+
+            var id = binding.etId.text.toString().trim().toLong()
+
+            if (esDelete == true){
+
+                val cajero = CajeroEntity(id = id, direccion = "", latitud = 0.0, longuitud = 0.0)
+
+                Thread{
+                    CajeroApplication.database.cajeroDao().deleteCajero(cajero)
+
+                    // Cambiar por un dialogo
+                    activity?.runOnUiThread {
+                        Toast.makeText(context, "Cajero eliminado", Toast.LENGTH_SHORT).show()
+                    }
+
+                    // Limpia los EditText en el hilo principal
+                    activity?.runOnUiThread {
+                        binding.etId.text.clear()
+                        binding.etDireccion.text.clear()
+                        binding.etLatitud.text.clear()
+                        binding.etLongitud.text.clear()
+                    }
+
+                }.start()
+
+            }else{
+
+                var direccion = binding.etDireccion.text.toString().trim()
+                var latitud = binding.etLatitud.text.toString().trim().toDouble()
+                var longitud = binding.etLongitud.text.toString().trim().toDouble()
+
+                val cajero = CajeroEntity(id = id, direccion = direccion, latitud = latitud, longuitud = longitud)
+
+                Thread{
+                    CajeroApplication.database.cajeroDao().updateCajero(cajero)
+
+                    // Cambiar por un dialogo
+                    activity?.runOnUiThread {
+                        Toast.makeText(context, "Cajero modificado", Toast.LENGTH_SHORT).show()
+                    }
+
+                    // Limpia los EditText en el hilo principal
+                    activity?.runOnUiThread {
+                        binding.etId.text.clear()
+                        binding.etDireccion.text.clear()
+                        binding.etLatitud.text.clear()
+                        binding.etLongitud.text.clear()
+                    }
+                }.start()
+            }
+
+        }
+
+
+
+
+        return binding.root
     }
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ModificarEliminarCajerosFragment.
-         */
-        // TODO: Rename and change types and number of parameters
+
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance(d: Boolean) =
             ModificarEliminarCajerosFragment().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+                    putBoolean(ARG_TIPO, d)
                 }
             }
     }
