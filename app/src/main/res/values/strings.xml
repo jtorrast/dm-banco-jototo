@@ -84,6 +84,9 @@
     <string name="text_toolbar_delete">Delte Atm</string>
     <string name="text_alert_atm_dialog">Are you sure you want to delete ATM?</string>
     <string name="text_title_atm_dialog">Delete ATM</string>
+    <string name="toast_delete">ATM Deleted</string>
+    <string name="toast_update">ATM Updated</string>
+    <string name="toast_add">ATM Added</string>
 
     <!-- Preference Titles -->
     <string name="sync_header">Language</string>

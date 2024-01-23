@@ -22,9 +22,6 @@ class AtmFormActivity : AppCompatActivity() {
         binding = ActivityAtmFormBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val toolBar: androidx.appcompat.widget.Toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.appbar)
-        setSupportActionBar(toolBar)
-        supportActionBar?.setDisplayShowTitleEnabled(false)
 
         val cajero = intent.getSerializableExtra("Cajero") as? CajeroEntity
 
@@ -33,6 +30,10 @@ class AtmFormActivity : AppCompatActivity() {
                 .add(R.id.contenedorFragmentAtm, AddCajeroFragment()).commit()
             binding.toolbarTitle.text = getString(R.string.text_toolbar_add)
         }else{
+            val toolBar: androidx.appcompat.widget.Toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.appbar)
+            setSupportActionBar(toolBar)
+            supportActionBar?.setDisplayShowTitleEnabled(false)
+            
             val frgUpdate = ModificarEliminarCajerosFragment.newInstance(false, cajero)
             supportFragmentManager.beginTransaction().add(R.id.contenedorFragmentAtm, frgUpdate).commit()
             binding.toolbarTitle.text = getString(R.string.text_toolbar_update)

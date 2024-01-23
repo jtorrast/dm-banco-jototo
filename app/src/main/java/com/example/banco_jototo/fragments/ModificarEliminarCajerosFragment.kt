@@ -77,9 +77,9 @@ class ModificarEliminarCajerosFragment : Fragment() {
                         // Código a ejecutar cuando se pulsa Aceptar
                         Thread {
                             CajeroApplication.database.cajeroDao().deleteCajero(cajeroEliminar)
-                            
+
                             activity?.runOnUiThread {
-                                Toast.makeText(context, "Cajero eliminado", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(context, getString(R.string.toast_delete), Toast.LENGTH_SHORT).show()
                             }
 
                             // Limpia los EditText en el hilo principal
@@ -94,7 +94,7 @@ class ModificarEliminarCajerosFragment : Fragment() {
                         dialog.cancel()
                     })
                     .setNegativeButton(getString(R.string.cancel), DialogInterface.OnClickListener { dialog, which ->
-                        // Código a ejecutar cuando se pulsa Cancelar (puede estar vacío)
+                        // Código a ejecutar cuando se pulsa Cancelar
                         dialog.cancel()
                     })
                     .setCancelable(false)
@@ -115,7 +115,7 @@ class ModificarEliminarCajerosFragment : Fragment() {
 
                     // Cambiar por un dialogo
                     activity?.runOnUiThread {
-                        Toast.makeText(context, "Cajero modificado", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, getString(R.string.toast_update), Toast.LENGTH_SHORT).show()
                     }
 
                     // Limpia los EditText en el hilo principal

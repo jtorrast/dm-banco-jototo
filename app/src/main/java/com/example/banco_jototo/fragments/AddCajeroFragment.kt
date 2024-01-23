@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.example.banco_jototo.R
 import com.example.banco_jototo.database.CajeroApplication
 import com.example.banco_jototo.databinding.FragmentAddCajeroBinding
 import com.example.banco_jototo.entities.CajeroEntity
@@ -47,7 +48,7 @@ class AddCajeroFragment : Fragment() {
 
                 // Muestra el Toast en el hilo principal
                 activity?.runOnUiThread {
-                    Toast.makeText(context, "Cajero guardado", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(context, R.string.toast_add, Toast.LENGTH_SHORT).show()
                 }
 
                 // Limpia los EditText en el hilo principal

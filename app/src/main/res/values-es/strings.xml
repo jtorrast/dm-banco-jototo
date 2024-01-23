@@ -94,5 +94,8 @@
     <string name="text_alert_atm_dialog">¿Estas seguro que quieres eliminar el cajero?</string>
     <string name="text_title_atm_dialog">Borrar Cajero</string>
     <string name="cancel">Cancelar</string>
+    <string name="toast_delete">Cajero eliminado</string>
+    <string name="toast_update">Cajero modificado</string>
+    <string name="toast_add">Cajero añadido</string>
 
 </resources>
