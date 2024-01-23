@@ -30,6 +30,12 @@ class AtmListActivity : AppCompatActivity(), OnClickListenerCajero {
 
     }
 
+    override fun onResume() {
+        super.onResume()
+
+        setupRecyclerView()
+    }
+
     private fun setupRecyclerView() {
         mAdapter = AtmListAdapter(mutableListOf(), this)
         linearLayoutManager = LinearLayoutManager(this)
