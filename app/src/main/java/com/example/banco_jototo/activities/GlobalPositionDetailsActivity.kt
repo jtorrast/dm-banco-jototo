@@ -3,10 +3,7 @@ package com.example.banco_jototo.activities
 import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.TextView
-import android.widget.Toast
-import androidx.fragment.app.Fragment
 import com.example.banco_jototo.R
 import com.example.banco_jototo.databinding.ActivityGlobalPositionDetailsBinding
 import com.example.banco_jototo.fragments.AccountsMovementsFragment

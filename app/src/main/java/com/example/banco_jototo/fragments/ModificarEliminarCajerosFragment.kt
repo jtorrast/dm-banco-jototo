@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat.getDrawable
 import com.example.banco_jototo.R
 import com.example.banco_jototo.database.CajeroApplication
 import com.example.banco_jototo.databinding.FragmentModificarEliminarCajerosBinding
@@ -71,7 +72,7 @@ class ModificarEliminarCajerosFragment : Fragment() {
                 val dialogView = layoutInflater.inflate(R.layout.dialog_delete_atm, null)
 
                 MaterialAlertDialogBuilder(requireContext())
-                    .setTitle(getString(R.string.text_title_atm_dialog))
+                    .setBackground(getDrawable(requireContext(),R.color.azul_oscuro_medio))
                     .setView(dialogView)
                     .setPositiveButton(getString(R.string.accept), DialogInterface.OnClickListener { dialog, which ->
                         // Código a ejecutar cuando se pulsa Aceptar

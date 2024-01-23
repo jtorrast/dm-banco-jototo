@@ -33,7 +33,7 @@ class AtmFormActivity : AppCompatActivity() {
             val toolBar: androidx.appcompat.widget.Toolbar = findViewById<androidx.appcompat.widget.Toolbar>(R.id.appbar)
             setSupportActionBar(toolBar)
             supportActionBar?.setDisplayShowTitleEnabled(false)
-            
+
             val frgUpdate = ModificarEliminarCajerosFragment.newInstance(false, cajero)
             supportFragmentManager.beginTransaction().add(R.id.contenedorFragmentAtm, frgUpdate).commit()
             binding.toolbarTitle.text = getString(R.string.text_toolbar_update)
