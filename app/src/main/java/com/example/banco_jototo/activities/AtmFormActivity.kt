@@ -38,9 +38,6 @@ class AtmFormActivity : AppCompatActivity() {
             binding.toolbarTitle.text = getString(R.string.text_toolbar_update)
         }
 
-
-
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -49,7 +46,9 @@ class AtmFormActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        val cajero = intent.getSerializableExtra("Cajero") as CajeroEntity
+
+        val cajero = intent.getSerializableExtra("Cajero") as? CajeroEntity
+
         return when(item.itemId){
             R.id.action_delete->{
 

@@ -3,11 +3,9 @@ package com.example.banco_jototo.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.banco_jototo.R
-import com.example.banco_jototo.bd.CajeroApplication
+import com.example.banco_jototo.database.CajeroApplication
 import com.example.banco_jototo.databinding.ActivityAtmManagementBinding
 import com.example.banco_jototo.entities.CajeroEntity
-import com.example.banco_jototo.pojo.Cliente
 
 class AtmManagementActivity : AppCompatActivity() {
 

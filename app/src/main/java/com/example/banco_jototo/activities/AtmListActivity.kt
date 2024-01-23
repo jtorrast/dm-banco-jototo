@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.banco_jototo.adapters.AtmListAdapter
 import com.example.banco_jototo.adapters.OnClickListenerCajero
-import com.example.banco_jototo.bd.CajeroApplication
+import com.example.banco_jototo.database.CajeroApplication
 import com.example.banco_jototo.databinding.ActivityAtmListBinding
 import com.example.banco_jototo.entities.CajeroEntity
 import java.util.concurrent.LinkedBlockingQueue

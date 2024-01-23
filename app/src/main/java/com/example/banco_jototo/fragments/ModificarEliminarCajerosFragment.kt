@@ -7,8 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.example.banco_jototo.R
-import com.example.banco_jototo.bd.CajeroApplication
+import com.example.banco_jototo.database.CajeroApplication
 import com.example.banco_jototo.databinding.FragmentModificarEliminarCajerosBinding
 import com.example.banco_jototo.entities.CajeroEntity
 
