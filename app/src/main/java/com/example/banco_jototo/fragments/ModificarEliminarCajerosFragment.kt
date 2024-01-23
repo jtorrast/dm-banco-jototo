@@ -1,5 +1,6 @@
 package com.example.banco_jototo.fragments
 
+import android.content.DialogInterface
 import android.os.Bundle
 import android.text.Editable
 import androidx.fragment.app.Fragment
@@ -7,9 +8,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.example.banco_jototo.R
 import com.example.banco_jototo.database.CajeroApplication
 import com.example.banco_jototo.databinding.FragmentModificarEliminarCajerosBinding
 import com.example.banco_jototo.entities.CajeroEntity
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -65,23 +68,39 @@ class ModificarEliminarCajerosFragment : Fragment() {
 
                 }
 
-                Thread{
-                    CajeroApplication.database.cajeroDao().deleteCajero(cajeroEliminar)
+                val dialogView = layoutInflater.inflate(R.layout.dialog_delete_atm, null)
 
-                    // Cambiar por un dialogo
-                    activity?.runOnUiThread {
-                        Toast.makeText(context, "Cajero eliminado", Toast.LENGTH_SHORT).show()
-                    }
+                MaterialAlertDialogBuilder(requireContext())
+                    .setTitle(getString(R.string.text_title_atm_dialog))
+                    .setView(dialogView)
+                    .setPositiveButton(getString(R.string.accept), DialogInterface.OnClickListener { dialog, which ->
+                        // Código a ejecutar cuando se pulsa Aceptar
+                        Thread {
+                            CajeroApplication.database.cajeroDao().deleteCajero(cajeroEliminar)
+                            
+                            activity?.runOnUiThread {
+                                Toast.makeText(context, "Cajero eliminado", Toast.LENGTH_SHORT).show()
+                            }
 
-                    // Limpia los EditText en el hilo principal
-                    activity?.runOnUiThread {
-                        binding.etId.text.clear()
-                        binding.etDireccion.text.clear()
-                        binding.etLatitud.text.clear()
-                        binding.etLongitud.text.clear()
-                    }
+                            // Limpia los EditText en el hilo principal
+                            activity?.runOnUiThread {
+                                binding.etId.text.clear()
+                                binding.etDireccion.text.clear()
+                                binding.etLatitud.text.clear()
+                                binding.etLongitud.text.clear()
+                            }
 
-                }.start()
+                        }.start()
+                        dialog.cancel()
+                    })
+                    .setNegativeButton(getString(R.string.cancel), DialogInterface.OnClickListener { dialog, which ->
+                        // Código a ejecutar cuando se pulsa Cancelar (puede estar vacío)
+                        dialog.cancel()
+                    })
+                    .setCancelable(false)
+                    .show()
+
+
 
             }else{
 

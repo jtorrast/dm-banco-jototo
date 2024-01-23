@@ -13,7 +13,7 @@
         android:text="@string/dialogTitleMovements"
         android:textColor="@color/white"
         android:textSize="16sp"
-       android:paddingBottom="16dp"
+        android:paddingBottom="16dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
 

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
+    android:background="@color/azul_oscuro_medio">
+
+    <ImageView
+        android:id="@+id/imgAlertDialog"
+        android:layout_width="@dimen/card_imag_size"
+        android:layout_height="@dimen/card_imag_size"
+        android:src="@drawable/ic_dangerous_24"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+
+    <TextView
+        android:id="@+id/textAlertDialog"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/text_alert_atm_dialog"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintStart_toEndOf="@id/imgAlertDialog"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

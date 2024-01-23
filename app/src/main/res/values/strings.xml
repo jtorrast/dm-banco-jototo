@@ -50,12 +50,12 @@
     <string name="caption_last_movements">Last movements:</string>
     <string name="text_btnMovements">Movements</string>
     <string name="accept">Accept</string>
+    <string name="cancel">Cancel</string>
     <string name="dialogTitleMovements">Details of the movement:</string>
     <string name="navigation_all">All</string>
     <string name="navigation_t0">Type 0</string>
     <string name="navigation_t1">Type 1</string>
     <string name="navigation_t2">Type 2</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="text_nav_logout">Logout</string>
     <string name="text_nav_config">Settings</string>
@@ -63,23 +63,6 @@
     <string name="open_nav">Open menu nav</string>
     <string name="close_nav">Close menu nav</string>
     <string name="title_activity_settings">SettingsActivity</string>
-
-    <!-- Preference Titles -->
-    <string name="sync_header">Language</string>
-
-    <string name="messages_header_multimedia">Multimedia</string>
-    <string name="music_title">Music</string>
-    <string name="text_music_off">Do not listen to the music while the application is running.</string>
-    <string name="text_music_on">Listen to music while the application is running</string>
-    <string name="text_video_off">Do not play a video when starting the application</string>
-    <string name="text_video_on">Play a video when starting the application</string>
-    <string name="video_title">Welcome video</string>
-    <string name="title_data">Data</string>
-    <string name="text_language">App language</string>
-    <string name="text_chose_language">Select language</string>
-    <string name="text_data">Data origin\n</string>
-    <string name="local_data_text">Local data</string>
-    <string name="web_data_text">Web service</string>
     <string name="text_atm_title">ATM\n</string>
     <string name="text_btn_atm_list">ATM LIST</string>
     <string name="text_btn_atm_add">ATM ADD</string>
@@ -99,6 +82,25 @@
     <string name="text_toolbar_update">Update Atm</string>
     <string name="text_toolbar_add">Add Atm</string>
     <string name="text_toolbar_delete">Delte Atm</string>
+    <string name="text_alert_atm_dialog">Are you sure you want to delete ATM?</string>
+    <string name="text_title_atm_dialog">Delete ATM</string>
+
+    <!-- Preference Titles -->
+    <string name="sync_header">Language</string>
+
+    <string name="messages_header_multimedia">Multimedia</string>
+    <string name="music_title">Music</string>
+    <string name="text_music_off">Do not listen to the music while the application is running.</string>
+    <string name="text_music_on">Listen to music while the application is running</string>
+    <string name="text_video_off">Do not play a video when starting the application</string>
+    <string name="text_video_on">Play a video when starting the application</string>
+    <string name="video_title">Welcome video</string>
+    <string name="title_data">Data</string>
+    <string name="text_language">App language</string>
+    <string name="text_chose_language">Select language</string>
+    <string name="text_data">Data origin\n</string>
+    <string name="local_data_text">Local data</string>
+    <string name="web_data_text">Web service</string>
 
 
 

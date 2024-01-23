@@ -91,5 +91,8 @@
     <string name="text_toolbar_update">Modificar cajero</string>
     <string name="text_toolbar_add">Añadir cajero</string>
     <string name="text_toolbar_delete">Borrar cajero</string>
+    <string name="text_alert_atm_dialog">¿Estas seguro que quieres eliminar el cajero?</string>
+    <string name="text_title_atm_dialog">Borrar Cajero</string>
+    <string name="cancel">Cancelar</string>
 
 </resources>

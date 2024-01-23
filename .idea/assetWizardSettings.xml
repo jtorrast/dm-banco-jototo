@@ -329,7 +329,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/local_atm/baseline_local_atm_24.xml" />
+                                      <entry key="url" value="file:/$USER_HOME$/AppData/Local/Android/Sdk/icons/material/materialicons/dangerous/baseline_dangerous_24.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -340,7 +340,7 @@
                         <option name="values">
                           <map>
                             <entry key="color" value="ffffff" />
-                            <entry key="outputName" value="baseline_local_atm_24" />
+                            <entry key="outputName" value="ic_dangerous_24" />
                             <entry key="sourceFile" value="C:\Users\torra\Desktop\desarrollo multimedia y movil\aplicacion-bancaria\banco-jototo" />
                           </map>
                         </option>
